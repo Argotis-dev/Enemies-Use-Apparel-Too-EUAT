@@ -1,0 +1,75 @@
+﻿using HarmonyLib;
+using LudeonTK;
+using RimWorld;
+using RimWorld.Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+
+namespace AiUseableApparel
+{
+    
+    public class CompAbility_RequiresApparelCharges : CompAbilityEffect
+    {
+        public new CompProperties_AbilityRequiresApparelCharges Props => (CompProperties_AbilityRequiresApparelCharges)props;
+
+
+        private Apparel ReloadableItem => GetApparelWithAbility(out Apparel apparelwithability);
+
+        private int RemainingCharges => ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.RemainingCharges ?? 0;
+
+        private int MaxCharges => ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.MaxCharges ?? 0;
+
+        public override bool CanCast => RemainingCharges > 0;
+
+        public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
+
+        private Apparel GetApparelWithAbility(out Apparel apparelwithability)
+        {
+            apparelwithability = null;
+            if (parent.pawn.apparel != null)
+            {   
+                foreach (Apparel item in parent.pawn.apparel.WornApparel)
+                {
+                    if (Props.ApparelDef == item.def)
+                    {
+                        apparelwithability = item;
+                        
+                    }
+
+                }
+            }
+            return apparelwithability;
+        }
+
+        public override bool GizmoDisabled(out string reason)
+        {
+           reason = null;
+            if (ReloadableItem == null)
+            {
+                reason = "No Apparel with ability found";
+                return true;
+            }
+           if (RemainingCharges <= 0)
+            {
+                reason = "No Remaining Charges";
+                return true;
+            }
+            return false;
+        }
+
+        public override void PostApplied(List<LocalTargetInfo> targets, Map map)
+        {
+
+            ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.UsedOnce();
+    
+            base.PostApplied(targets, map);
+            
+        }
+
+    }
+}

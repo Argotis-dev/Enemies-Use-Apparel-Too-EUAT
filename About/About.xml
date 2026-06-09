@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<packageId>username.modname</packageId>
+	<packageId>Argotis.AiUseableApparel</packageId>
 	<name>AiUseableApparel</name>
 	<author>Argotis</author>
 	<!-- <modIconPath>path/to/icon</modIconPath> -->
@@ -29,5 +29,5 @@
 		<!-- <li>username.modname</li> -->
 	</loadAfter>
 
-	<description>Template</description>
+	<description>AiUseableApparel</description>
 </ModMetaData>

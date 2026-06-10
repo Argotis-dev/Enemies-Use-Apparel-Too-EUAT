@@ -9,16 +9,17 @@ using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using AiUseableApparel.Utility;
 
 namespace AiUseableApparel
 {
     
-    public class CompAbility_RequiresApparelCharges : CompAbilityEffect
+    public class CompAbility_ChargesApparel : CompAbilityEffect
     {
-        public new CompProperties_AbilityRequiresApparelCharges Props => (CompProperties_AbilityRequiresApparelCharges)props;
+        public new CompProperties_AbilityChargesApparel Props => (CompProperties_AbilityChargesApparel)props;
 
 
-        private Apparel ReloadableItem => GetApparelWithAbility(out Apparel apparelwithability);
+        private Apparel ReloadableItem => AiUseableApparelUtility.GetAbilityApparelSource(parent, out Apparel apparelwithability);
 
         private int RemainingCharges => ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.RemainingCharges ?? 0;
 
@@ -27,24 +28,6 @@ namespace AiUseableApparel
         public override bool CanCast => RemainingCharges > 0;
 
         public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
-
-        private Apparel GetApparelWithAbility(out Apparel apparelwithability)
-        {
-            apparelwithability = null;
-            if (parent.pawn.apparel != null)
-            {   
-                foreach (Apparel item in parent.pawn.apparel.WornApparel)
-                {
-                    if (Props.ApparelDef == item.def)
-                    {
-                        apparelwithability = item;
-                        
-                    }
-
-                }
-            }
-            return apparelwithability;
-        }
 
         public override bool GizmoDisabled(out string reason)
         {

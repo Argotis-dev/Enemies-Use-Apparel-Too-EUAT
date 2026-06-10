@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <AbilityDef>
+        <defName>LaunchFragGrenadeGrenadierArmor</defName>
+        <label>launch frag grenade</label>
+        <description>Launch a grenade. Can be reloaded using steel.</description>
+        <iconPath>UI/Commands/LaunchFragGrenade</iconPath>
+        <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
+        <aiCanUse>true</aiCanUse>
+        <verbProperties>
+        <verbClass>Verb_CastAbility</verbClass>
+        <range>12.9</range>
+        <warmupTime>1.5</warmupTime>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <targetParams>
+            <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        </verbProperties>
+        <comps>
+        <li Class="CompProperties_AbilityLaunchProjectile">
+            <projectileDef>Proj_GrenadeFrag</projectileDef>
+        </li>
+        <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
+        </li>
+        </comps>
+    </AbilityDef>
+</Defs>    

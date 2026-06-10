@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
+        <value>
+            <li>LaunchFragGrenadeGrenadierArmor</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
+    </Operation>
+</Patch>

@@ -18,4 +18,40 @@
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
     </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+        <value>
+            <li>DeployTurret</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/verbs</xpath>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
+        <value>
+            <li>JetJump</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
+    </Operation>
 </Patch>

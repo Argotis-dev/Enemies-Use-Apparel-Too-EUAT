@@ -26,4 +26,67 @@
         </li>
         </comps>
     </AbilityDef>
+
+    <AbilityDef>
+        <defName>JetJump</defName>
+        <label>jet jump</label>
+        <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
+        <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
+        <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>AiUseableApparel.Verb_CastAbilityJumpApparel</verbClass>
+            <label>jump</label>
+            <violent>false</violent>
+            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+            <warmupTime>0.5</warmupTime>
+            <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+            <requireLineOfSight>true</requireLineOfSight>
+            <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+            <soundLanding>JumpPackLand</soundLanding>
+            <targetParams>
+            <canTargetLocations>true</canTargetLocations>
+            <canTargetPawns>false</canTargetPawns>
+            <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <jobDef>CastJump</jobDef>
+        <comps>
+        <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
+        </li>
+        </comps>
+    </AbilityDef>
+
+  <AbilityDef>
+    <defName>DeployTurret</defName>
+    <label>deploy turret</label>
+    <description>Deploy a turret at the target location. Consumed on use.</description>
+    <iconPath>Things/Pawn/Humanlike/Apparel/TurretPack/TurretPack</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <displayOrder>300</displayOrder>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <verbProperties>
+        <verbClass>Verb_CastAbility</verbClass>
+        <range>22.9</range>
+        <warmupTime>1.0</warmupTime>
+        <soundCast>ThrowGrenade</soundCast>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <targetParams>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>  
+    </verbProperties>
+    <comps>
+      <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
+        </li>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Grenade_TurretPack</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
 </Defs>    

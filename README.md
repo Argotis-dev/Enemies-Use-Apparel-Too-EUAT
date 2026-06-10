@@ -1,6 +1,14 @@
-# Rimworld Mod Template
+# Ai Useable Apparel
 
-This template is created for Rimworld modders who use [Visual Studio Code](https://code.visualstudio.com/) instead of Visual Studio IDE.
+The purppose of this mod is to allow enemy humanoids to use apparel like the grenadier armor or turret pack. In order to do this the mod does two things. It converts apparel xml verb defs into ability defs so the ai can spot and use them and it proved a way for ability use to charge apparel that has charges (i.e. grenades from the grenadier armor). 
+
+## Note!!!!!!!
+
+This current upload does not provide the xml changes yet!!!!
+
+## Additional Notes
+This Mod is based off of the the template found here: https://github.com/Rimworld-Mods/Template. I would have struggled way longer to get started without them so big thanks to the creators!!!! I'm leaving the notes from the template mod here while I finish developing this MOD
+
 
 * __No virtual folders__. Easy to manage and edit both `xml` and `cs` files.
 * __Lightweight__. Visual Studio Code only takes up to 500 MB of storage space and is lighting fast.

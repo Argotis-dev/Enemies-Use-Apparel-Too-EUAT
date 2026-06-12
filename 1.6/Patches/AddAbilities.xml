@@ -19,6 +19,25 @@
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
     </Operation>
+        <!-- Needs Ideology? -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
+        <value>
+            <li>JetJump</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/verbs</xpath>
+    </Operation>
     <!-- Needs Anomaly -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
@@ -37,6 +56,25 @@
     </Operation>
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/verbs</xpath>
+    </Operation>
+    <!-- Needs Odyssey -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
+        <value>
+            <li>DeployHunterDrone</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationRemove">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
     </Operation>
     <!-- Needs Ideology? -->
     <Operation Class="PatchOperationConditional">
@@ -58,12 +96,21 @@
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
     </Operation>
     <!-- Needs Ideology? -->   
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes</xpath>
+    <Operation Class="PatchOperationInsert">
+        <xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
                 <treeDef>Abilities_AggressiveJump</treeDef>
             </li>
         </value>
     </Operation>
+    <!--
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes</xpath>
+        <value>
+            <li Class="ThinkNode_Subtree">
+                <treeDef>Abilities_EscapeJump</treeDef>
+            </li>
+        </value>
+    </Operation>-->
 </Patch>

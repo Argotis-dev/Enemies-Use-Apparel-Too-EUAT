@@ -6,26 +6,71 @@
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         <li Class="ThinkNode_ConditionalColonist">
-          <invert>true</invert>
-          <subNodes>
-
-            <li Class="ThinkNode_ConditionalHasAbility">
+        <invert>true</invert>
+        <subNodes>
+           <li Class="AiUseableApparel.ThinkNode_PawnisMelee">
+            <subNodes> 
+              <li Class="AiUseableApparel.ThinkNode_ConditionalApparelHasAbility">
               <ability>JetJump</ability>
               <subNodes>
-                <!-- Jump towards enemy to beat -->
-                <li Class="ThinkNode_ConditionalDoingJob">
-                  <jobDef>AttackMelee</jobDef>
-                  <subNodes>
-                    <li Class="JobGiver_AIJumpToJobTarget">
-                      <ability>JetJump</ability>
-                    </li>
-                  </subNodes>
-                </li>
+                <li Class="ThinkNode_ConditionalHasTarget">
+                <subNodes>
+                  <li Class="AiUseableApparel.JobGiver_AIJumpToTargetEnemy">
+                    <ability>JetJump</ability>
+                    <minDistToTarget>4</minDistToTarget>
+                  </li>
                 </subNodes>
+                </li>
+              </subNodes>
+              </li>
+            </subNodes>
+            </li>
+        </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>Abilities_EscapeJump</defName>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalColonist">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="AiUseableApparel.ThinkNode_PawnisMelee">
+            <invert>true</invert>
+            <subNodes>
+              <li Class="ThinkNode_ConditionalHasAbility">
+                <ability>JetJump</ability>
+                <subNodes>
+                  <li Class="ThinkNode_ConditionalTotalDamage">
+                    <thresholdPercent>0.50</thresholdPercent>
+                    <subNodes>
+                      <li Class="ThinkNode_HarmedRecently">
+                        <thresholdTicks>120</thresholdTicks>
+                        <subNodes>
+                          <li Class="ThinkNode_ConditionalUnderCombatPressure">
+                            <maxThreatDistance>2</maxThreatDistance>
+                            <minCloseTargets>2</minCloseTargets>
+                            <subNodes>
+                              <li Class="JobGiver_AIJumpEscapeEnemies">
+                                <ability>JetJump</ability>
+                              </li>
+                            </subNodes>
+                          </li>
+                        </subNodes>
+                      </li>
+                    </subNodes>
+                  </li>
+                </subNodes>
+              </li>
+            </subNodes>
             </li>
           </subNodes>
         </li>
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>
+
 </Defs>  

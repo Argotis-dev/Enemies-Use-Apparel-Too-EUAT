@@ -12,7 +12,6 @@ namespace AiUseableApparel
 
         private Apparel JumpApparelSource => AiUseableApparelUtility.GetAbilityApparelSource(ability, out Apparel apparelwithability);
 
-        private CompApparelReloadable ReloadableComp => null;
         public override float EffectiveRange
         {
             get
@@ -36,7 +35,8 @@ namespace AiUseableApparel
         {
             if (ability.Activate(currentTarget, currentDestination))
             {
-                return JumpUtility.DoJump(CasterPawn, currentTarget, ReloadableComp, verbProps, ability, base.CurrentTarget, JumpFlyerDef);
+                // The null here seems wrong. It's used by DoJump to trigger used once, which is redundant. And the parent TryCastShot should work but doesn't?
+                return JumpUtility.DoJump(CasterPawn, currentTarget, null, verbProps, ability, base.CurrentTarget, JumpFlyerDef);
             }
             return false;
         }

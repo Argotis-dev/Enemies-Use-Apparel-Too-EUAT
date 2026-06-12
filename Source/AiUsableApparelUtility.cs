@@ -29,5 +29,28 @@ namespace AiUseableApparel.Utility
                 return apparelwithability;
             }
 
+            public static bool PawnHasApparelwithAbility(AbilityDef abilitydef, Pawn pawn, out Ability ability)
+            {
+                ability = null;
+                if (pawn.apparel.WornApparel != null)
+                {   
+                    foreach (Apparel apparelitem in pawn.apparel.WornApparel)
+                    {
+                        if (apparelitem.AllAbilitiesForReading != null)
+                        {
+                            foreach (Ability abilityitem in apparelitem.AllAbilitiesForReading)
+                            {
+                                if (abilityitem.def == abilitydef)
+                                {
+                                    ability = abilityitem;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
+
     }
 }

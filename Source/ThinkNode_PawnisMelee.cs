@@ -2,10 +2,10 @@ using RimWorld.Utility;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using AiUseableApparel.Utility;
+using EnemiesUseApparelToo.Utility;
 using Verse.AI;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
 	public class ThinkNode_PawnisMelee : ThinkNode_Conditional
 	{

@@ -2,7 +2,7 @@ using Verse;
 
 using RimWorld;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
     public class Command_AbilityApparel : Command_Ability
     {

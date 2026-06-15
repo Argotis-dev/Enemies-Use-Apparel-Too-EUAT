@@ -2,15 +2,15 @@ using RimWorld.Utility;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using AiUseableApparel.Utility;
+using EnemiesUseApparelToo.Utility;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
     public class Verb_CastAbilityJumpApparel : Verb_CastAbilityJump
     {
         private float cachedEffectiveRange = -1f;
 
-        private Apparel JumpApparelSource => AiUseableApparelUtility.GetAbilityApparelSource(ability, out Apparel apparelwithability);
+        private Apparel JumpApparelSource => EnemiesUseApparelTooUtility.GetAbilityApparelSource(ability, out Apparel apparelwithability);
 
         public override float EffectiveRange
         {

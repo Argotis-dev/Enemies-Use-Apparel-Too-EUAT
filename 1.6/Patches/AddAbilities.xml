@@ -13,7 +13,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
         <value>
-            <li>LaunchFragGrenadeGrenadierArmor</li>
+            <li>EUAT_LaunchFragGrenadeGrenadierArmor</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -31,7 +31,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
         <value>
-            <li>LaunchIncendiaryPheonixArmor</li>
+            <li>EUAT_LaunchIncendiaryPheonixArmor</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -50,7 +50,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
         <value>
-            <li>JetJump</li>
+            <li>EUAT_JetJump</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -69,7 +69,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
         <value>
-            <li>DeployTurret</li>
+            <li>EUAT_DeployTurret</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -88,7 +88,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
         <value>
-            <li>DeployHunterDrone</li>
+            <li>EUAT_DeployHunterDrone</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -107,7 +107,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
         <value>
-            <li>JetJump</li>
+            <li>EUAT_JetJump</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">
@@ -118,7 +118,7 @@
         <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_ConfigurableHostilityResponse"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
-                <treeDef>Abilities_AggressiveJump</treeDef>
+                <treeDef>EUAT_Abilities_AggressiveJump</treeDef>
             </li>
         </value>
     </Operation>
@@ -126,7 +126,7 @@
         <xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
-                <treeDef>Abilities_EscapeJump</treeDef>
+                <treeDef>EUAT_Abilities_EscapeJump</treeDef>
             </li>
         </value>
     </Operation>

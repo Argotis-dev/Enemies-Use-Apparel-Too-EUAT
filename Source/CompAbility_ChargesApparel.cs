@@ -9,16 +9,16 @@ using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
 using Verse.AI;
-using AiUseableApparel.Utility;
+using EnemiesUseApparelToo.Utility;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
     
     public class CompAbility_ChargesApparel : CompAbilityEffect
     {
         public new CompProperties_AbilityChargesApparel Props => (CompProperties_AbilityChargesApparel)props;
 
-        private Apparel ReloadableItem => AiUseableApparelUtility.GetAbilityApparelSource(parent, out Apparel apparelwithability);
+        private Apparel ReloadableItem => EnemiesUseApparelTooUtility.GetAbilityApparelSource(parent, out Apparel apparelwithability);
 
         private int RemainingCharges => ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.RemainingCharges ?? 0;
 

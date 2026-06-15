@@ -2,16 +2,16 @@
 
 <Defs>
     <ThinkTreeDef>
-    <defName>Abilities_AggressiveJump</defName>
+    <defName>EUAT_Abilities_AggressiveJump</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         <li Class="ThinkNode_ConditionalColonist">
         <invert>true</invert>
         <subNodes>
-           <li Class="AiUseableApparel.ThinkNode_PawnisMelee">
+           <li Class="EnemiesUseApparelToo.ThinkNode_PawnisMelee">
             <subNodes> 
-              <li Class="AiUseableApparel.ThinkNode_ConditionalApparelHasAbility">
-              <ability>JetJump</ability>
+              <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalApparelHasAbility">
+              <ability>EUAT_JetJump</ability>
               <subNodes>
                 <li Class="ThinkNode_ConditionalTotalDamage">
                 <thresholdPercent>0.50</thresholdPercent>
@@ -19,8 +19,8 @@
                 <subNodes>
                   <li Class="ThinkNode_ConditionalHasTarget">
                   <subNodes>
-                    <li Class="AiUseableApparel.JobGiver_AIJumpToTargetEnemy">
-                      <ability>JetJump</ability>
+                    <li Class="EnemiesUseApparelToo.JobGiver_AIJumpToTargetEnemy">
+                      <ability>EUAT_JetJump</ability>
                       <minDistToTarget>8</minDistToTarget>
                     </li>
                   </subNodes>
@@ -38,14 +38,14 @@
   </ThinkTreeDef>
 
   <ThinkTreeDef>
-    <defName>Abilities_EscapeJump</defName>
+    <defName>EUAT_Abilities_EscapeJump</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         <li Class="ThinkNode_ConditionalColonist">
         <invert>true</invert>
         <subNodes>
-          <li Class="AiUseableApparel.ThinkNode_ConditionalApparelHasAbility">
-          <ability>JetJump</ability>
+          <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalApparelHasAbility">
+          <ability>EUAT_JetJump</ability>
           <subNodes>
             <li Class="ThinkNode_ConditionalTotalDamage">
             <thresholdPercent>0.50</thresholdPercent>
@@ -57,8 +57,8 @@
                 <maxThreatDistance>2</maxThreatDistance>
                 <minCloseTargets>2</minCloseTargets>
                 <subNodes>
-                  <li Class="AiUseableApparel.JobGiver_AIJumpApparelEscapeEnemies">
-                    <ability>JetJump</ability>
+                  <li Class="EnemiesUseApparelToo.JobGiver_AIJumpApparelEscapeEnemies">
+                    <ability>EUAT_JetJump</ability>
                   </li>
                 </subNodes>
                 </li>

@@ -2,10 +2,10 @@ using RimWorld.Utility;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using AiUseableApparel.Utility;
+using EnemiesUseApparelToo.Utility;
 using Verse.AI;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
 
 public class ThinkNode_ConditionalApparelHasAbility : ThinkNode_Conditional
@@ -14,7 +14,7 @@ public class ThinkNode_ConditionalApparelHasAbility : ThinkNode_Conditional
 
 	protected override bool Satisfied(Pawn pawn)
 	{
-		return AiUseableApparelUtility.PawnHasApparelwithAbility(ability, pawn, out Ability abilitysource) == true;
+		return EnemiesUseApparelTooUtility.PawnHasApparelwithAbility(ability, pawn, out Ability abilitysource) == true;
 	}
 
 	public override ThinkNode DeepCopy(bool resolve = true)

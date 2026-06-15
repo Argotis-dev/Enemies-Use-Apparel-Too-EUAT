@@ -9,7 +9,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
     public class CompProperties_AbilityChargesApparel : CompProperties_AbilityEffect
     {

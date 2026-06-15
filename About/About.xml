@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<packageId>Argotis.AiUseableApparel</packageId>
-	<name>AiUseableApparel</name>
+	<packageId>Argotis.EnemiesUseApparelToo</packageId>
+	<name>EnemiesUseApparelToo</name>
 	<author>Argotis</author>
 	<!-- <modIconPath>path/to/icon</modIconPath> -->
+	<!-- Enemies Use Apparel Too - EUAT -->
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
 
-	<description>AiUseableApparel</description>
+	<description>Enemies Use Apparel Too (EUAT), meaning they can use the grenadier armor, turret packs, hunter drones, etc...</description>
 </ModMetaData>

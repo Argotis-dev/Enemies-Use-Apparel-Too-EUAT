@@ -3,10 +3,10 @@ using RimWorld.Utility;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using AiUseableApparel.Utility;
+using EnemiesUseApparelToo.Utility;
 using Verse.AI;
 
-namespace AiUseableApparel
+namespace EnemiesUseApparelToo
 {
 public class JobGiver_AIJumpToTargetEnemy : ThinkNode_JobGiver
 {
@@ -18,7 +18,7 @@ public class JobGiver_AIJumpToTargetEnemy : ThinkNode_JobGiver
 	protected override Job TryGiveJob(Pawn pawn)
 	{
 		Ability ability = null;
-		if (AiUseableApparelUtility.PawnHasApparelwithAbility(this.ability, pawn, out ability) != true)
+		if (EnemiesUseApparelTooUtility.PawnHasApparelwithAbility(this.ability, pawn, out ability) != true)
 		{
 			return null;
 		}

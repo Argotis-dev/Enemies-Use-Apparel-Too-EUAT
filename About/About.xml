@@ -3,6 +3,12 @@
 	<packageId>Argotis.EnemiesUseApparelToo</packageId>
 	<name>EnemiesUseApparelToo</name>
 	<author>Argotis</author>
+	<url>https://github.com/Argotis-dev/Enemies-Use-Apparel-Too-EUAT</url>
+	<loadAfter>
+        <li>ludeon.Rimworld.Royalty</li>
+        <li>ludeon.Rimworld.Odyssey</li>
+		<li>ludeon.Rimworld.Anomaly</li>
+    </loadAfter>
 	<!-- <modIconPath>path/to/icon</modIconPath> -->
 	<!-- Enemies Use Apparel Too - EUAT -->
 	<supportedVersions>

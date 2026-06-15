@@ -5,3 +5,17 @@
 # /*/Assemblies
 # /.vscode
 # /Source
+.vs/AiUseableApparel.slnx/DesignTimeBuild/.dtbcache.v2
+.vs/AiUseableApparel.slnx/FileContentIndex/f45560d6-47b3-437e-828f-af7ebfba3290.vsidx
+.vs/AiUseableApparel.slnx/v18/.futdcache.v2
+.vs/AiUseableApparel.slnx/v18/.suo
+.vs/AiUseableApparel.slnx/v18/DocumentLayout.backup.json
+.vs/AiUseableApparel.slnx/v18/DocumentLayout.json
+.vs/ProjectEvaluation/aiuseableapparel.metadata.v10.bin
+.vs/ProjectEvaluation/aiuseableapparel.projects.v10.bin
+.vs/ProjectEvaluation/aiuseableapparel.strings.v10.bin
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+obj/Debug/.NETFramework,Version=v4.0.AssemblyAttributes.cs
+obj/Debug/AiUseableApparel.csproj.AssemblyReference.cache
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

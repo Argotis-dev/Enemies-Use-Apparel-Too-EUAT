@@ -44,11 +44,11 @@
         <li Class="ThinkNode_ConditionalColonist">
         <invert>true</invert>
         <subNodes>
-          <li Class="ThinkNode_ConditionalHasAbility">
+          <li Class="AiUseableApparel.ThinkNode_ConditionalApparelHasAbility">
           <ability>JetJump</ability>
           <subNodes>
             <li Class="ThinkNode_ConditionalTotalDamage">
-            <thresholdPercent>0.25</thresholdPercent>
+            <thresholdPercent>0.50</thresholdPercent>
             <subNodes>
               <li Class="ThinkNode_HarmedRecently">
               <thresholdTicks>120</thresholdTicks>
@@ -57,7 +57,7 @@
                 <maxThreatDistance>2</maxThreatDistance>
                 <minCloseTargets>2</minCloseTargets>
                 <subNodes>
-                  <li Class="JobGiver_AIJumpEscapeEnemies">
+                  <li Class="AiUseableApparel.JobGiver_AIJumpApparelEscapeEnemies">
                     <ability>JetJump</ability>
                   </li>
                 </subNodes>

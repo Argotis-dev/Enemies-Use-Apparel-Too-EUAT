@@ -104,13 +104,12 @@
             </li>
         </value>
     </Operation>
-    <!--
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class = "JobGiver_ReactToCloseMeleeThreat"]</xpath>
+    <Operation Class="PatchOperationInsert">
+        <xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
                 <treeDef>Abilities_EscapeJump</treeDef>
             </li>
         </value>
-    </Operation>-->
+    </Operation>
 </Patch>

@@ -1,4 +1,4 @@
-# Ai Useable Apparel
+# Enemies Use Apparel Too - EUAT
 
 The purppose of this mod is to allow enemy humanoids to use apparel like the grenadier armor or turret pack. In order to do this the mod does two things. It converts apparel xml verb defs into ability defs so the ai can spot and use them and it proved a way for ability use to charge apparel that has charges (i.e. grenades from the grenadier armor).  I haven't added harmory patches or Mod checkliss yet (if you don't have an expansion you might have issues).
 

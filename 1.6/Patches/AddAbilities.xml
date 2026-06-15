@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- Needs royalty -->
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_LaunchFragGrenadeGrenadierArmor</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
     </Operation>
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_LaunchIncendiaryPheonixArmor</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/verbs</xpath>
     </Operation>
         <!-- Needs Ideology? -->
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_JetJump</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/verbs</xpath>
     </Operation>
     <!-- Needs Anomaly -->
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Anomaly">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Anomaly">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Anomaly">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_DeployTurret</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Anomaly">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/verbs</xpath>
     </Operation>
     <!-- Needs Odyssey -->
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Oddysey">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Oddysey">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Oddysey">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_DeployHunterDrone</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Oddysey">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
     </Operation>
     <!-- Needs Ideology? -->
-    <Operation Class="PatchOperationConditional">
+    <Operation Class="PatchOperationConditional" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
+        <nomatch Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
     </Operation>    
-    <Operation Class="PatchOperationAdd">
+    <Operation Class="PatchOperationAdd" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
         <value>
             <li>EUAT_JetJump</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
     </Operation>
     <!-- Needs Ideology? -->   
-    <Operation Class="PatchOperationInsert">
+    <Operation Class="PatchOperationInsert" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_ConfigurableHostilityResponse"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
@@ -122,7 +122,7 @@
             </li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationInsert">
+    <Operation Class="PatchOperationInsert" MayRequire="Ludeon.Rimworld.Royalty">
         <xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">

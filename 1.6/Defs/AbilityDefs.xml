@@ -27,42 +27,71 @@
         </comps>
     </AbilityDef>
 
-    <AbilityDef Name="JetJump">
-        <defName>JetJump</defName>
-        <label>jet jump</label>
-        <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
-        <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
-        <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
-        <hostile>false</hostile>
-        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <verbProperties>
-            <verbClass>AiUseableApparel.Verb_CastAbilityJumpApparel</verbClass>
-            <label>jump</label>
-            <violent>false</violent>
-            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
-            <warmupTime>0.5</warmupTime>
-            <warmupEffecter>JumpWarmupEffect</warmupEffecter>
-            <requireLineOfSight>true</requireLineOfSight>
-            <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
-            <soundLanding>JumpPackLand</soundLanding>
-            <targetParams>
-              <canTargetLocations>true</canTargetLocations>
-              <canTargetPawns>false</canTargetPawns>
-              <canTargetBuildings>false</canTargetBuildings>
-            </targetParams>
-        </verbProperties>
-        <jobDef>CastJump</jobDef>
-        <comps>
-        <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
-        </li>
-        </comps>
-    </AbilityDef>
+  <AbilityDef>
+    <defName>LaunchIncendiaryPheonixArmor</defName>
+    <label>launch incendiary shell</label>
+    <description>Launch a shell that creates an explosion on impact, igniting everything nearby. Can be reloaded using chemfuel.</description>
+    <iconPath>UI/Commands/LaunchIncendiaryShell</iconPath>
+    <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsIncendiary>true</ai_IsIncendiary>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>14.9</range>
+      <warmupTime>1.5</warmupTime>
+      <forcedMissRadius>1.9</forcedMissRadius>
+      <soundCast>Shot_IncendiaryLauncher</soundCast>
+      <soundCastTail>GunTail_Medium</soundCastTail>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Proj_GrenadePhoenixFire</projectileDef>
+      </li>
+      <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef Name="JetJump">
+    <defName>JetJump</defName>
+    <label>jet jump</label>
+    <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
+    <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
+    <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+        <verbClass>AiUseableApparel.Verb_CastAbilityJumpApparel</verbClass>
+        <label>jump</label>
+        <violent>false</violent>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>0.5</warmupTime>
+        <warmupEffecter>JumpWarmupEffect</warmupEffecter>
+        <requireLineOfSight>true</requireLineOfSight>
+        <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
+        <soundLanding>JumpPackLand</soundLanding>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+          <canTargetPawns>false</canTargetPawns>
+          <canTargetBuildings>false</canTargetBuildings>
+        </targetParams>
+    </verbProperties>
+    <jobDef>CastJump</jobDef>
+    <comps>
+    <li Class="AiUseableApparel.CompProperties_AbilityChargesApparel">
+    </li>
+    </comps>
+  </AbilityDef>
 
   <AbilityDef>
     <defName>DeployTurret</defName>
     <label>deploy turret</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/TurretPack/TurretPack</iconPath>
+    <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -89,11 +118,12 @@
     </comps>
   </AbilityDef>
 
-    <AbilityDef>
+  <AbilityDef>
     <defName>DeployHunterDrone</defName>
     <label>deploy hunter drone</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Projectile/Projectile_HunterDrone</iconPath>
+    <gizmoClass>AiUseableApparel.Command_AbilityApparel</gizmoClass>
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>

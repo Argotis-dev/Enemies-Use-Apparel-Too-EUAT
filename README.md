@@ -1,19 +1,22 @@
 # Ai Useable Apparel
 
-The purppose of this mod is to allow enemy humanoids to use apparel like the grenadier armor or turret pack. In order to do this the mod does two things. It converts apparel xml verb defs into ability defs so the ai can spot and use them and it proved a way for ability use to charge apparel that has charges (i.e. grenades from the grenadier armor). 
+The purppose of this mod is to allow enemy humanoids to use apparel like the grenadier armor or turret pack. In order to do this the mod does two things. It converts apparel xml verb defs into ability defs so the ai can spot and use them and it proved a way for ability use to charge apparel that has charges (i.e. grenades from the grenadier armor).  I haven't added harmory patches or Mod checkliss yet (if you don't have an expansion you might have issues).
 
 ## Note!!!!!!!
 
-This current upload does not provide the xml changes yet!!!!
+This upload doesn't add the items to enemy spawn pools (yet). It only allows Enemies to use it if they have it equipped.
+
+Items made usable for enemies:
+
+Jump Packs
+Locust Armor
+Pheonix Armor
+Grenadier Armor
+Hunter Packs
+Turret Packs
 
 ## Additional Notes
 This Mod is based off of the the template found here: https://github.com/Rimworld-Mods/Template. I would have struggled way longer to get started without them so big thanks to the creators!!!! I'm leaving the notes from the template mod here while I finish developing this MOD
-
-
-* __No virtual folders__. Easy to manage and edit both `xml` and `cs` files.
-* __Lightweight__. Visual Studio Code only takes up to 500 MB of storage space and is lighting fast.
-* __Automated__. Integrated build, scripting and management tools to perform common tasks making everyday workflows faster.
-* __Customizable__. Almost every feature can be changed, whenever it is editor UI, keybinds or folder structure.
 
 ## Setup
 ### Windows

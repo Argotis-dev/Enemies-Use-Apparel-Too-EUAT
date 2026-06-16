@@ -18,24 +18,25 @@
 <description>
 Enemies Use Apparel Too (EUAT)
 
-Ever want to have enemy mellee pawns fly at you? No???? well this mod lets them do that (jet pack not included)
-Ever want Cataphracs to be able to fill your base with fire? No???? well now they can!
+Ever want to have enemy melee pawns fly at you? No???? well this mod lets them do that.
+Ever want Cataphracts to be able to fill your base with fire? No???? well now they can!
+
+Items affected:
+Grenadier Armor
+Phoenix Armor
+Locust Armor
+Jump Packs
+Hunter Drone Packs
+Turret Packs
 
 This mod adds the defense pop tag to the listed packs, meaning any enemies that could spawn with those(smokepop belt, shield belt, etc...)
 can spawn with the turret, jump, and hunter pack now.
 
 The mod also adds the listed armors to spawn pools to allow them to spawn on enemies I deemed appropriate.
 
-Items affected:
-Grenadier Armor
-Pheonix Armor
-Locust Armor
-Jump Packs
-Hunter Drone Packs
-Turret Packs
-
 PS: This mod would also allow for any apparel to have abilities that consume ammo. Want to create a Smokepop Cape? Or a hellfire helmet? 
 With this mod that "should" only be xml edits you can reference within this mod, just look up ability defs in the code and modify them and 
 attach them as seen in this mod's xmls.
+
 </description>
 </ModMetaData>

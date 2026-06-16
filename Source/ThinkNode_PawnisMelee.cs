@@ -12,7 +12,6 @@ namespace EnemiesUseApparelToo
 		protected override bool Satisfied(Pawn pawn)
 		{
 			return pawn.equipment?.Primary?.def.IsMeleeWeapon == true;
-			//return true;
 		}
 	}
 }

@@ -19,4 +19,79 @@
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
     </Operation>
+    <!-- Add Defense Pop Tag to Hunter Drone Pack-->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel</xpath>
+            <value>
+                <tags /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/tags</xpath>
+        <value>
+            <li>BeltDefensePop</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/generateAllowChance</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]</xpath>
+            <value>
+                <generateAllowChance>0.15</generateAllowChance>
+            </value>
+        </nomatch>
+    </Operation> 
+    <!-- Add Grenadier armor and Locust armor to Elite Spacers -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildEliteBase"]/specificApparelRequirements</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildEliteBase"]</xpath>
+            <value>
+                <specificApparelRequirements /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildEliteBase"]/specificApparelRequirements</xpath>
+        <value>
+            <li>
+                <bodyPartGroup>Torso</bodyPartGroup>
+                <apparelLayer>Middle</apparelLayer>
+                <alternateTagChoices>
+                <li>
+                    <tag>OrbitalPowerArmor</tag>
+                    <chance>0.50</chance>
+                </li>
+                </alternateTagChoices>
+            </li>
+        </value>
+    </Operation>
+    <!-- Adds Locust armor to spacer slashers -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildSlasherBase"]/specificApparelRequirements</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildSlasherBase"]</xpath>
+            <value>
+                <specificApparelRequirements /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[@Name="TradersGuildSlasherBase"]/specificApparelRequirements</xpath>
+        <value>
+            <li>
+                <bodyPartGroup>Torso</bodyPartGroup>
+                <apparelLayer>Middle</apparelLayer>
+                <alternateTagChoices>
+                <li>
+                    <tag>LocustVariant</tag>
+                    <chance>0.10</chance>
+                </li>
+                </alternateTagChoices>
+            </li>
+        </value>
+    </Operation>
 </Patch>    

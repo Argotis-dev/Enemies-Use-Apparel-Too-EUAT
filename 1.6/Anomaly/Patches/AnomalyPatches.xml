@@ -19,4 +19,29 @@
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/verbs</xpath>
     </Operation>
+    <!-- Add Defense Pop Tag to Turret Pack-->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel</xpath>
+            <value>
+                <tags /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/tags</xpath>
+        <value>
+            <li>BeltDefensePop</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/generateAllowChance</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]</xpath>
+            <value>
+                <generateAllowChance>0.15</generateAllowChance>
+            </value>
+        </nomatch>
+    </Operation> 
 </Patch>

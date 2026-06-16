@@ -34,6 +34,7 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/tags</xpath>
         <value>          
            <li>SpacerMilitary</li>
+           <li>OrbitalPowerArmor</li>
         </value>
     </Operation>
     <!-- Add Launch Incendiary Ability to Pheonix Armor -->
@@ -72,6 +73,21 @@
             <li>CataphractVariant</li>
         </value>
     </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="Empire_Fighter_Cataphract"]/specificApparelRequirements</xpath>
+        <value>
+            <li>
+                <bodyPartGroup>Torso</bodyPartGroup>
+                <apparelLayer>Middle</apparelLayer>
+                <alternateTagChoices>
+                <li>
+                    <tag>CataphractVariant</tag>
+                    <chance>0.5</chance>
+                </li>
+                </alternateTagChoices>
+            </li>
+        </value>
+    </Operation>
     <!-- Add Jet Jump Ability to Locust Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/abilities</xpath>
@@ -92,7 +108,6 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/verbs</xpath>
     </Operation>
     <!-- Add Spacer Military Tag to Locust Armor-->
-    <!-- TODO create a Per Tier tag ie. ReconVariant, MarineVariant, CataphractVariant so anywhere, or do a chance replace like with capes -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/tags</xpath>
         <nomatch Class="PatchOperationAdd">
@@ -106,6 +121,8 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/tags</xpath>
         <value>
             <li>SpacerMilitary</li>
+            <li>LocustVariant</li>
+            <li>OrbitalPowerArmor</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationConditional">
@@ -123,6 +140,31 @@
             <li>EUAT_JetJump</li>
         </value>
     </Operation>
+    <!-- Add Defense Pop Tag to Jump Pack-->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel</xpath>
+            <value>
+                <tags /> 
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/tags</xpath>
+        <value>
+            <li>BeltDefensePop</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/generateAllowChance</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]</xpath>
+            <value>
+                <generateAllowChance>0.15</generateAllowChance>
+            </value>
+        </nomatch>
+    </Operation> 
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
     </Operation> 

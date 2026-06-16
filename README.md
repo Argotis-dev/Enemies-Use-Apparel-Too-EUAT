@@ -13,10 +13,15 @@ The mod also adds the listed armors to spawn pools to allow them to spawn on ene
 Items made usable for enemies:
 
 Jump Packs
+
 Locust Armor
+
 Pheonix Armor
+
 Grenadier Armor
+
 Hunter Packs
+
 Turret Packs
 
 ## Compatability

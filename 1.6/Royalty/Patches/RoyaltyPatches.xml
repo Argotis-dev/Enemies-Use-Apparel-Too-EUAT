@@ -172,7 +172,7 @@
         <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_ConfigurableHostilityResponse"]</xpath>
         <value>
             <li Class="ThinkNode_Subtree">
-                <treeDef>EUAT_Abilities_AggressiveJump</treeDef>
+                <treeDef>EUAT_Abilities_Jump</treeDef>
             </li>
         </value>
     </Operation>

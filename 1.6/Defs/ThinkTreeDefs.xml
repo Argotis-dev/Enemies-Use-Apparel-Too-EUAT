@@ -2,35 +2,22 @@
 
 <Defs>
     <ThinkTreeDef>
-    <defName>EUAT_Abilities_AggressiveJump</defName>
+    <defName>EUAT_Abilities_Jump</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         <li Class="ThinkNode_ConditionalColonist">
         <invert>true</invert>
         <subNodes>
-           <li Class="EnemiesUseApparelToo.ThinkNode_PawnisMelee">
-            <subNodes> 
-              <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalApparelHasAbility">
+          <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalApparelHasAbility">
+          <ability>EUAT_JetJump</ability>
+          <subNodes>
+            <li Class="EnemiesUseApparelToo.JobGiver_AIAbilityJump">
               <ability>EUAT_JetJump</ability>
-              <subNodes>
-                <li Class="ThinkNode_ConditionalTotalDamage">
-                <thresholdPercent>0.50</thresholdPercent>
-                <invert>true</invert>
-                <subNodes>
-                  <li Class="ThinkNode_ConditionalHasTarget">
-                  <subNodes>
-                    <li Class="EnemiesUseApparelToo.JobGiver_AIJumpToTargetEnemy">
-                      <ability>EUAT_JetJump</ability>
-                      <minDistToTarget>8</minDistToTarget>
-                    </li>
-                  </subNodes>
-                  </li>
-                </subNodes>
-                </li> 
-              </subNodes>
-              </li>
-            </subNodes>
+              <minDistToTarget>8</minDistToTarget>
+              <thresholdPercent>0.50</thresholdPercent>
             </li>
+          </subNodes>
+          </li>
         </subNodes>
         </li>
       </subNodes>

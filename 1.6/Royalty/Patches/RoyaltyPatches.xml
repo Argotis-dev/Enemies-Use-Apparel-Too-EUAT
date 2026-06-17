@@ -14,7 +14,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
         <value>
-            <li>EUAT_LaunchFragGrenadeGrenadierArmor</li>
+            <li>EUAT_LaunchFragGrenadeApparel</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationRemove">

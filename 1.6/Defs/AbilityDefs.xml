@@ -63,7 +63,6 @@
     <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <!--<aiCanUse>true</aiCanUse>-->
     <verbProperties>
         <verbClass>EnemiesUseApparelToo.Verb_CastAbilityJumpApparel</verbClass>
         <label>jump</label>
@@ -84,10 +83,6 @@
     <comps>
     <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
     </li>
-    <!--<li Class="EnemiesUseApparelToo.CompProperties_AbilityAiJump">
-      <minDistToTarget>8</minDistToTarget>
-      <thresholdPercent>0.50</thresholdPercent>
-    </li>-->
     </comps>
   </AbilityDef>
 

@@ -168,20 +168,4 @@
     <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
     </Operation> 
-    <!--<Operation Class="PatchOperationInsert">
-        <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_ConfigurableHostilityResponse"]</xpath>
-        <value>
-            <li Class="ThinkNode_Subtree">
-                <treeDef>EUAT_Abilities_Jump</treeDef>
-            </li>
-        </value>
-    </Operation>
-    <Operation Class="PatchOperationInsert">
-        <xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
-        <value>
-            <li Class="ThinkNode_Subtree">
-                <treeDef>EUAT_Abilities_EscapeJump</treeDef>
-            </li>
-        </value>
-    </Operation>-->
 </Patch>

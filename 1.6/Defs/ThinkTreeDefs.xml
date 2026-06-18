@@ -24,40 +24,4 @@
     </thinkRoot>
   </ThinkTreeDef>
 
-  <ThinkTreeDef>
-    <defName>EUAT_Abilities_EscapeJump</defName>
-    <thinkRoot Class="ThinkNode_Priority">
-      <subNodes>
-        <li Class="ThinkNode_ConditionalColonist">
-        <invert>true</invert>
-        <subNodes>
-          <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalPawnHasJump">
-          <subNodes>
-            <li Class="ThinkNode_ConditionalTotalDamage">
-            <thresholdPercent>0.50</thresholdPercent>
-            <subNodes>
-              <li Class="ThinkNode_HarmedRecently">
-              <thresholdTicks>120</thresholdTicks>
-              <subNodes>
-                <li Class="ThinkNode_ConditionalUnderCombatPressure">
-                <maxThreatDistance>2</maxThreatDistance>
-                <minCloseTargets>2</minCloseTargets>
-                <subNodes>
-                  <li Class="EnemiesUseApparelToo.JobGiver_AIJumpApparelEscapeEnemies">
-                    <ability>EUAT_JetJump</ability>
-                  </li>
-                </subNodes>
-                </li>
-              </subNodes>
-              </li>
-            </subNodes>
-            </li>
-          </subNodes>
-          </li>
-        </subNodes>
-        </li>
-      </subNodes>
-    </thinkRoot>
-  </ThinkTreeDef>
-
 </Defs>  

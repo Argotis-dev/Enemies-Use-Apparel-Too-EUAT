@@ -35,8 +35,7 @@ namespace EnemiesUseApparelToo
         {
             if (ability.Activate(currentTarget, currentDestination))
             {
-                // The null here seems wrong. It's used by DoJump to trigger used once, which is redundant. And the parent TryCastShot should work but doesn't?
-                return JumpUtility.DoJump(CasterPawn, currentTarget, null, verbProps, ability, base.CurrentTarget, JumpFlyerDef);
+                return JumpUtility.DoJump(CasterPawn, currentTarget, null, verbProps, ability, base.currentTarget, JumpFlyerDef);
             }
             return false;
         }

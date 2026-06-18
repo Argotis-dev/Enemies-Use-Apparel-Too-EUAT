@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <AbilityDef>
-        <defName>EUAT_LaunchFragGrenadeGrenadierArmor</defName>
+        <defName>EUAT_LaunchFragGrenadeApparel</defName>
         <label>launch frag grenade</label>
         <description>Launch a grenade. Can be reloaded using steel.</description>
         <iconPath>UI/Commands/LaunchFragGrenade</iconPath>

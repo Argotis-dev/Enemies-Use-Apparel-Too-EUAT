@@ -21,6 +21,8 @@ Enemies Use Apparel Too (EUAT)
 Ever want to have enemy melee pawns fly at you? No???? well this mod lets them do that.
 Ever want Cataphracts to be able to fill your base with fire? No???? well now they can!
 
+This mod converts listed Apparel Verbs into abilities that enemy AI can use.
+
 Items affected:
 Grenadier Armor
 Phoenix Armor
@@ -29,9 +31,32 @@ Jump Packs
 Hunter Drone Packs
 Turret Packs
 
-This mod adds the defense pop tag to the listed packs, meaning any enemies that could spawn with those(smokepop belt, shield belt, etc...) can spawn with the turret, jump, and hunter pack now.
+This mod adds the defense pop tag to the listed packs, meaning any enemies that could spawn with those(smokepop belt, loweshield pack, etc...) can spawn with the turret, jump, and hunter pack now.
 
 The mod also adds the listed armors to spawn pools to allow them to spawn on enemies I deemed appropriate.
+
+Note on jump logic:
+
+Jump logic currently works in two ways:
+
+1: if a non player humanlike is healthy and melee and more than 8 tiles away from it's target it will jump to itss target
+
+2: if a non player humanlike is unhealthy and threatened it will try to escape
+
+3: if a non player humanlike is ranged it will look for cover that's more than 8 tiles away and jump to it
+
+How this mod works:
+
+This mod creates the core framework for the Enemy AI to use Vanilla Apparel. This is done by:
+1. Converting relevant Apparel verbs into abilities (similar to the grenade launch of odyssey's unique weapons)
+2. Creating C# that allows those abilities to consume charges from the apparel they're on
+3. Creating C# that allows charges to be displayed on ability gizmos from apparel
+4. Creating C# that allows the ai to use abilities to jump to the pawn's target enemy
+5. Creating C# that reads the the jump range from the apparel so item quality can still affect jump range
+6. Adds think trees for Pawns to use this Mod's jump ability
+
+This mod won't modify other mod's item behavior on its own.
+
 
 PS: This mod would also allow for any apparel to have abilities that consume ammo. Want to create a Smokepop Cape? Or a hellfire helmet? With this mod that "should" only be xml edits you can reference within this mod, just look up ability defs in the code and modify them and attach them as seen in this mod's xmls.
 

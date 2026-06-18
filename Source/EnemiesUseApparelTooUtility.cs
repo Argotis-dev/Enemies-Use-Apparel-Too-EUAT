@@ -102,7 +102,6 @@ namespace EnemiesUseApparelToo.Utility
             dest = IntVec3.Invalid;
             Pawn pawn = abilityjump.pawn;
             float effectiveJumpRange = abilityjump.verb.EffectiveRange;
-            //Thing target = abilityjump.pawn.mindState?.enemyTarget;
 
             if (abilityjump == null)
             {

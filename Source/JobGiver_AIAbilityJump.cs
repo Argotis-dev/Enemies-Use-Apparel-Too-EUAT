@@ -53,60 +53,24 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 
 	private static List<Pawn> potentialTargets = new List<Pawn>();
 
-	/*private static readonly SimpleCurve DistanceSquaredToTargetSelectionWeightCurve = new SimpleCurve
-	{
-		new CurvePoint(100f, 1f),
-		new CurvePoint(400f, 0.1f),
-		new CurvePoint(625f, 0f)
-	};*/
 	protected override LocalTargetInfo GetTarget(Pawn caster, Ability ability)
 	{
 		potentialTargets.Clear();
-		/*IEnumerable<Thing> hostiles = from x in caster.Map.attackTargetsCache.GetPotentialTargetsFor(caster)
-			select x.Thing;
-		if (hostiles.EnumerableNullOrEmpty())
+		bool isMeleeAttack = caster.CurrentEffectiveVerb.IsMeleeAttack;
+		float maxDist = ability.verb.EffectiveRange;
+		if(!isMeleeAttack)
 		{
-			return LocalTargetInfo.Invalid;
+			maxDist = maxDist + Mathf.Clamp(caster.CurrentEffectiveVerb.EffectiveRange * 0.66f, 2f, 20f);
 		}
-		foreach (Pawn item in caster.Map.mapPawns.AllPawnsSpawned)
+
+		Thing target = (Thing)AttackTargetFinder.BestAttackTarget(caster, TargetScanFlags.NeedLOSToAll | TargetScanFlags.NeedReachableIfCantHitFromMyPos | TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable, IsGoodTarget, 0f, maxDist, default(IntVec3), float.MaxValue, canBashDoors: true);
+
+
+		if (EnemiesUseApparelTooUtility.AiFindJumpCell(ability, target, thresholdPercent, minDistToTarget, out var destination))
 		{
-			if (caster.HostileTo(item))
-			{
-				potentialTargets.Add(item);
-			}
+			return new LocalTargetInfo(destination);
 		}
-		if (potentialTargets.TryRandomElementByWeight(delegate(Pawn x)
-		{
-			float num = ability.verb.EffectiveRange;
-			foreach (Thing item2 in hostiles)
-			{
-				if (item2.Spawned)
-				{
-					float num2 = item2.Position.DistanceToSquared(x.Position);
-					if (num2 < num)
-					{
-						num = num2;
-					}
-				}
-			}
-			return DistanceSquaredToTargetSelectionWeightCurve.Evaluate(num);
-		}, out var result))
-		{*/
-			bool isMeleeAttack = caster.CurrentEffectiveVerb.IsMeleeAttack;
-			float maxDist = ability.verb.EffectiveRange;
-			if(!isMeleeAttack)
-			{
-				maxDist = maxDist + Mathf.Clamp(caster.CurrentEffectiveVerb.EffectiveRange * 0.66f, 2f, 20f);
-			}
 
-			Thing target = (Thing)AttackTargetFinder.BestAttackTarget(caster, TargetScanFlags.NeedLOSToAll | TargetScanFlags.NeedReachableIfCantHitFromMyPos | TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable, IsGoodTarget, 0f, maxDist, default(IntVec3), float.MaxValue, canBashDoors: true);
-	
-
-			if (EnemiesUseApparelTooUtility.AiFindJumpCell(ability, target, thresholdPercent, minDistToTarget, out var destination))
-			{
-				return new LocalTargetInfo(destination);
-			}
-		//}
 		return LocalTargetInfo.Invalid;
 	}
 

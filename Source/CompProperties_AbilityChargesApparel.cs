@@ -13,10 +13,6 @@ namespace EnemiesUseApparelToo
 {
     public class CompProperties_AbilityChargesApparel : CompProperties_AbilityEffect
     {
-
-        public float minDistToTarget = 8f;
-
-        public float thresholdPercent = 0.50f;
         public CompProperties_AbilityChargesApparel()
         {
             compClass = typeof(CompAbility_ChargesApparel);

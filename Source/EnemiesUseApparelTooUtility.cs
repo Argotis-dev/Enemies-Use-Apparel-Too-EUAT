@@ -56,6 +56,24 @@ namespace EnemiesUseApparelToo.Utility
             return false;
         }
 
+        public static bool PawnHasJumpAbility(Pawn pawn, out Ability ability)
+        {
+            ability = null;
+            if (pawn.abilities.AllAbilitiesForReading != null)
+            {   
+                foreach (Ability abilityitem in pawn.abilities.AllAbilitiesForReading)
+                {
+                    if (abilityitem.def.jobDef == JobDefOf.CastJump)
+                    {
+                        ability = abilityitem;
+                        return true;
+                    }
+                }
+                
+            }
+            return false;
+        }
+
         public static bool isHealthy(Pawn pawn, float thresholdPercent)
         {
             HediffSet hediffSet = pawn.health.hediffSet;
@@ -90,7 +108,7 @@ namespace EnemiesUseApparelToo.Utility
             {
                 return false;
             }
-            if (!abilityjump.CanCast || pawn.CurJob?.def == abilityjump.def.jobDef || target == null)
+            if (!abilityjump.CanCast || abilityjump.Casting || target == null)
             {
                 return false;
             }           

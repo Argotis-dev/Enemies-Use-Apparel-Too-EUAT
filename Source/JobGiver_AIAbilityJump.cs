@@ -35,11 +35,14 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 			return null;
 		}
 		LocalTargetInfo target = GetTarget(pawn, ability);
-		if (!target.IsValid)
+		if (target.IsValid)
 		{
-			return null;
+			Job job = ability.GetJob(target, target);
+			pawn.pather?.StopDead();
+			pawn.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: false);
 		}
-		return ability.GetJob(target, target);
+		
+		return null;
 	
 	}
 
@@ -57,7 +60,7 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 	{
 		potentialTargets.Clear();
 		bool isMeleeAttack = caster.CurrentEffectiveVerb.IsMeleeAttack;
-		float maxDist = ability.verb.EffectiveRange;
+		float maxDist = minDistToTarget + ability.verb.EffectiveRange;
 		if(!isMeleeAttack)
 		{
 			maxDist = maxDist + Mathf.Clamp(caster.CurrentEffectiveVerb.EffectiveRange * 0.66f, 2f, 20f);

@@ -28,7 +28,7 @@ namespace EnemiesUseApparelToo
                 Pawn pawn = parent.pawn;
                 
 
-                if (EnemiesUseApparelTooUtility.AiFindJumpCell(parent, Props.thresholdPercent, Props.minDistToTarget, out var destination))
+                if (EnemiesUseApparelTooUtility.AiFindJumpCell(parent, pawn.mindState.enemyTarget, Props.thresholdPercent, Props.minDistToTarget, out var destination))
                 {
                     Log.Warning("got to attempted jump");
                     Job job = parent.GetJob(destination, destination);
@@ -49,7 +49,7 @@ namespace EnemiesUseApparelToo
 
         public override bool AICanTargetNow(LocalTargetInfo target)
         {
-            return EnemiesUseApparelTooUtility.AiFindJumpCell(parent, Props.thresholdPercent, Props.minDistToTarget, out var destination);
+            return EnemiesUseApparelTooUtility.AiFindJumpCell(parent, parent.pawn.mindState.enemyTarget, Props.thresholdPercent, Props.minDistToTarget, out var destination);
         }
 
 

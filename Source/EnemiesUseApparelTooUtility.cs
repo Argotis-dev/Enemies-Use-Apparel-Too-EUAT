@@ -97,12 +97,12 @@ namespace EnemiesUseApparelToo.Utility
             return false;
         }
 
-        public static bool AiFindJumpCell(Ability abilityjump, float healththreshold, float minDistToTarget, out IntVec3 dest)
+        public static bool AiFindJumpCell(Ability abilityjump, TargetInfo target, float healththreshold, float minDistToTarget, out IntVec3 dest)
         {
             dest = IntVec3.Invalid;
             Pawn pawn = abilityjump.pawn;
             float effectiveJumpRange = abilityjump.verb.EffectiveRange;
-            Thing target = abilityjump.pawn.mindState?.enemyTarget;
+            //Thing target = abilityjump.pawn.mindState?.enemyTarget;
 
             if (abilityjump == null)
             {
@@ -114,7 +114,7 @@ namespace EnemiesUseApparelToo.Utility
             }           
             if (pawn.equipment?.Primary?.def.IsMeleeWeapon == true && isHealthy(pawn, healththreshold))
             {
-                var destination = RCellFinder.BestOrderedGotoDestNear(target.Position, pawn, (c) => JumpUtility.ValidJumpTarget(pawn, pawn.Map, c) && JumpUtility.CanHitTargetFrom(pawn, pawn.Position, c, effectiveJumpRange));
+                var destination = RCellFinder.BestOrderedGotoDestNear(target.Cell, pawn, (c) => JumpUtility.ValidJumpTarget(pawn, pawn.Map, c) && JumpUtility.CanHitTargetFrom(pawn, pawn.Position, c, effectiveJumpRange));
                 if (boolAiValidJump(pawn, destination, effectiveJumpRange, minDistToTarget))
                 {
                     dest = destination;
@@ -128,7 +128,7 @@ namespace EnemiesUseApparelToo.Utility
                 }
                 
             }
-            else if(boolTryFindShootingPosition(pawn, out var destination3))
+            else if(boolTryFindShootingPosition(pawn, target, out var destination3))
             {
                 if(boolAiValidJump(pawn, destination3, effectiveJumpRange, minDistToTarget))
                 {
@@ -151,7 +151,7 @@ namespace EnemiesUseApparelToo.Utility
             return relocatePosition.IsValid;
         }
 
-        private static bool boolTryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)
+        private static bool boolTryFindShootingPosition(Pawn pawn, TargetInfo target, out IntVec3 dest, Verb verbToUse = null)
         {
             Verb verb = verbToUse ?? pawn.TryGetAttackVerb(null, !pawn.IsColonist);
             if (verb == null)
@@ -162,7 +162,7 @@ namespace EnemiesUseApparelToo.Utility
             return CastPositionFinder.TryFindCastPosition(new CastPositionRequest
             {
                 caster = pawn,
-                target = pawn.mindState.enemyTarget,
+                target = target.Thing,
                 verb = verb,
                 maxRangeFromTarget = verb.EffectiveRange,
                 wantCoverFromTarget = (verb.EffectiveRange > 5f)

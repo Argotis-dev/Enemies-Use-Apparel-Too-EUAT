@@ -10,7 +10,7 @@ namespace EnemiesUseApparelToo
     {
         private float cachedEffectiveRange = -1f;
 
-        private Apparel JumpApparelSource => EnemiesUseApparelTooUtility.GetAbilityApparelSource(ability, out Apparel apparelwithability);
+        private Apparel JumpApparelSource => EnemiesUseApparelTooUtility.GetAbilityApparelSource(ability);
 
         public override float EffectiveRange
         {

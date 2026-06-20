@@ -5,18 +5,19 @@
         <label>launch frag grenade</label>
         <description>Launch a grenade. Can be reloaded using steel.</description>
         <iconPath>UI/Commands/LaunchFragGrenade</iconPath>
-        <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
+        <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
         <aiCanUse>true</aiCanUse>
+        <hotKey>Misc4</hotKey>
         <verbProperties>
-        <verbClass>Verb_CastAbility</verbClass>
-        <range>12.9</range>
-        <warmupTime>1.5</warmupTime>
-        <soundCast>Shot_IncendiaryLauncher</soundCast>
-        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-        <targetParams>
-            <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+          <verbClass>Verb_CastAbility</verbClass>
+          <range>12.9</range>
+          <warmupTime>1.5</warmupTime>
+          <soundCast>Shot_IncendiaryLauncher</soundCast>
+          <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+          <targetParams>
+              <canTargetLocations>true</canTargetLocations>
+          </targetParams>
+          <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         </verbProperties>
         <comps>
         <li Class="CompProperties_AbilityLaunchProjectile">
@@ -32,9 +33,11 @@
     <label>launch incendiary shell</label>
     <description>Launch a shell that creates an explosion on impact, igniting everything nearby. Can be reloaded using chemfuel.</description>
     <iconPath>UI/Commands/LaunchIncendiaryShell</iconPath>
-    <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
+    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <ai_IsIncendiary>true</ai_IsIncendiary>
+    <!--<hotKey>Misc5</hotKey>-->
+    <groupAbility>true</groupAbility>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <range>14.9</range>
@@ -55,14 +58,22 @@
     </comps>
   </AbilityDef>
 
+
+  <AbilityGroupDef>
+    <defName>misc</defName>
+  </AbilityGroupDef>
+
   <AbilityDef Name="JetJump">
     <defName>EUAT_JetJump</defName>
     <label>jet jump</label>
     <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
-    <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
+    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!--<groupAbility>true</groupAbility>
+    <hotKey>Misc5</hotKey>
+    <groupDef>misc</groupDef>-->
     <verbProperties>
         <verbClass>EnemiesUseApparelToo.Verb_CastAbilityJumpApparel</verbClass>
         <label>jump</label>
@@ -73,6 +84,7 @@
         <requireLineOfSight>true</requireLineOfSight>
         <flightEffecterDef>JumpFlightEffect</flightEffecterDef>
         <soundLanding>JumpPackLand</soundLanding>
+        <drawAimPie>true</drawAimPie>      
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
           <canTargetPawns>false</canTargetPawns>
@@ -91,11 +103,12 @@
     <label>deploy turret</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/TurretPack/TurretPack</iconPath>
-    <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
+    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hotKey>Misc4</hotKey>
     <verbProperties>
         <verbClass>Verb_CastAbility</verbClass>
         <range>22.9</range>
@@ -123,11 +136,12 @@
     <label>deploy hunter drone</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Projectile/Projectile_HunterDrone</iconPath>
-    <gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>
+    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hotKey>Misc4</hotKey>
     <verbProperties>
         <verbClass>Verb_CastAbility</verbClass>
         <range>20.9</range>

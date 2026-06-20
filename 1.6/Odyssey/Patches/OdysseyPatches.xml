@@ -16,9 +16,9 @@
             <li>EUAT_DeployHunterDrone</li>
         </value>
     </Operation>
-    <Operation Class="PatchOperationRemove">
+    <!--<Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
-    </Operation>
+    </Operation>-->
     <!-- Add Defense Pop Tag to Hunter Drone Pack-->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/tags</xpath>

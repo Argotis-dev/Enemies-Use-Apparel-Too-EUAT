@@ -26,7 +26,7 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 		{
 			return null;
 		}
-		if (pawn.CurJob?.ability == ability)
+		if (pawn.CurJob?.def == JobDefOf.CastJump)
 		{
 			return null;
 		}
@@ -39,7 +39,9 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 		{
 			Job job = ability.GetJob(target, target);
 			pawn.pather?.StopDead();
-			pawn.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: false);
+			return job;
+
+			//pawn.jobs.StartJob(job, JobCondition.InterruptForced, null, resumeCurJobAfterwards: true);
 		}
 		
 		return null;

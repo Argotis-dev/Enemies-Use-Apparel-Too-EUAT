@@ -14,9 +14,9 @@ namespace EnemiesUseApparelToo.Utility
     
     public static class EnemiesUseApparelTooUtility
     {
-        public static Apparel GetAbilityApparelSource(Ability ability, out Apparel apparelwithability)
+        public static Apparel GetAbilityApparelSource(Ability ability)
         {
-            apparelwithability = null;
+            Apparel apparelwithability = null;
             if (ability.pawn.apparel != null)
             {   
                 foreach (Apparel apparelitem in ability.pawn.apparel.WornApparel)
@@ -138,9 +138,9 @@ namespace EnemiesUseApparelToo.Utility
             return dest.IsValid;
         }
 
-        private static List<Thing> tmpHostileSpots = new List<Thing>();
-        private static bool TryFindRelocatePosition(Ability jump, Pawn pawn, out IntVec3 relocatePosition, float maxDistance)
+        public static bool TryFindRelocatePosition(Ability jump, Pawn pawn, out IntVec3 relocatePosition, float maxDistance)
         {
+            List<Thing> tmpHostileSpots = new List<Thing>();
             tmpHostileSpots.Clear();
             tmpHostileSpots.AddRange(from a in pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn)
                 where !a.ThreatDisabled(pawn)

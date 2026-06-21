@@ -1,7 +1,4 @@
-using RimWorld.Utility;
-using UnityEngine;
 using Verse;
-using RimWorld;
 using EnemiesUseApparelToo.Utility;
 using Verse.AI;
 

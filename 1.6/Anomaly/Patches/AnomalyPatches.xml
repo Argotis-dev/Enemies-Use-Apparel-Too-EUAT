@@ -16,9 +16,6 @@
             <li>EUAT_DeployTurret</li>
         </value>
     </Operation>
-    <!--<Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/verbs</xpath>
-    </Operation>-->
     <!-- Add Defense Pop Tag to Turret Pack-->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/tags</xpath>

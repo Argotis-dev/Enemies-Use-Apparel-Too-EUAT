@@ -1,5 +1,4 @@
 
-using RimWorld.Utility;
 using UnityEngine;
 using Verse;
 using RimWorld;
@@ -7,8 +6,6 @@ using EnemiesUseApparelToo.Utility;
 using Verse.AI;
 
 using System.Collections.Generic;
-using System.Linq;
-using Verse.Noise;
 
 namespace EnemiesUseApparelToo
 {

@@ -1,13 +1,10 @@
 using System.Collections.Generic;
-using System;
 using System.Linq;
-using UnityEngine;
 using Verse;
 using Verse.AI;
 
 
 using RimWorld;
-using System.Runtime.InteropServices;
 
 namespace EnemiesUseApparelToo.Utility
 {

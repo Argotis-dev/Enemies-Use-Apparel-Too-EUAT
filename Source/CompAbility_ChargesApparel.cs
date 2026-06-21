@@ -1,14 +1,6 @@
-﻿using HarmonyLib;
-using LudeonTK;
-using RimWorld;
-using RimWorld.Utility;
-using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using UnityEngine;
 using Verse;
-using Verse.AI;
 using EnemiesUseApparelToo.Utility;
 
 namespace EnemiesUseApparelToo

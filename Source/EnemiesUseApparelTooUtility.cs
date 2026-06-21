@@ -56,6 +56,27 @@ namespace EnemiesUseApparelToo.Utility
             return false;
         }
 
+       public static bool PawnHasAbilitywithComp(Pawn pawn, AbilityComp comp, out Ability ability)
+        {
+            ability = null;
+            if (pawn.abilities.AllAbilitiesForReading != null)
+            {   
+                foreach (Ability abilityitem in pawn.abilities.AllAbilitiesForReading)
+                {
+                    foreach (AbilityComp abilityComp in abilityitem.comps)
+                    {
+                        if (abilityComp == comp)
+                        {
+                            ability = abilityitem;
+                            return true;
+                        }
+                    }
+                }
+                
+            }
+            return false;
+        }
+
         public static bool PawnHasJumpAbility(Pawn pawn, out Ability ability)
         {
             ability = null;
@@ -133,6 +154,14 @@ namespace EnemiesUseApparelToo.Utility
                 {
                     dest = destination3;
                 }         
+            }     
+            else if(!isHealthy(pawn, 0.25f) && isThreatend(pawn, 30f, 0))
+            {
+                if(TryFindRelocatePosition(abilityjump, pawn, out var destination4 , effectiveJumpRange))
+                {
+                    dest = destination4;
+                }
+                
             }
 
             return dest.IsValid;

@@ -27,6 +27,30 @@
     </thinkRoot>
   </ThinkTreeDef>
 
+  <!--<ThinkTreeDef>
+    <defName>EUAT_LaunchTurret</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>0</insertPriority>
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="ThinkNode_ConditionalColonist">
+        <invert>true</invert>
+        <subNodes>
+          <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalApparelHasAbility">
+          <ability>EUAT_DeployTurret</ability>
+          <subNodes>
+          <li Class="EnemiesUseApparelToo.ThinkNode_ConditionalPawnHasJump">
+          <subNodes>
+            <li Class="EnemiesUseApparelToo.JobGiver_AIDeploySpawnable">
+            </li>
+          </subNodes>
+          </li>
+        </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>-->
+
  <ThinkTreeDef>
     <defName>EUAT_Flee_Explosion_Jump</defName>
     <thinkRoot Class="ThinkNode_Priority">

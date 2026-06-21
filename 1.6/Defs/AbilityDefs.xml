@@ -68,12 +68,12 @@
     <label>jet jump</label>
     <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
-    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
+   <!-- <gizmoClass>EnemiesUseApparelToo.Command_AbilityGroup</gizmoClass>-->
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <!--<groupAbility>true</groupAbility>
+    <groupAbility>true</groupAbility>
     <hotKey>Misc5</hotKey>
-    <groupDef>misc</groupDef>-->
+    <!-- <groupDef>misc</groupDef>-->
     <verbProperties>
         <verbClass>EnemiesUseApparelToo.Verb_CastAbilityJumpApparel</verbClass>
         <label>jump</label>

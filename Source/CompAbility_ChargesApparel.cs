@@ -28,7 +28,7 @@ namespace EnemiesUseApparelToo
         public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
 
         public override bool ShouldHideGizmo => true;
-/*
+
         public override bool GizmoDisabled(out string reason)
         {
            reason = null;
@@ -52,7 +52,7 @@ namespace EnemiesUseApparelToo
                 parent.RemainingCharges = RemainingCharges;
             }
             return base.CompGetGizmosExtra();
-        }*/
+        }/**/
         public override void PostApplied(List<LocalTargetInfo> targets, Map map)
         {
             ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.UsedOnce();

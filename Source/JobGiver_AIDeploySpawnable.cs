@@ -12,21 +12,16 @@ using Verse.Noise;
 
 namespace EnemiesUseApparelToo
 {
-public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
+public class JobGiver_AIDeploySpawnable : JobGiver_AICastAbility
 {
-	public float minDistToTarget = 10f;
-
-	public float thresholdPercent = 0.50f;
-	
-
 	protected override Job TryGiveJob(Pawn pawn)
 	{
 		Ability ability = null;
-		if (EnemiesUseApparelTooUtility.PawnHasJumpAbility(pawn, out ability) != true)
+		if (EnemiesUseApparelTooUtility.PawnHasApparelwithAbility(EUATDefOf.EUAT_DeployTurret, pawn, out ability) != true)
 		{
 			return null;
 		}
-		if (pawn.CurJob?.def == JobDefOf.CastJump)
+		if (pawn.CurJob?.def == ability.def.jobDef)
 		{
 			return null;
 		}
@@ -34,12 +29,11 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 		{
 			return null;
 		}
+		Log.Warning("prevalid");
 		LocalTargetInfo target = GetTarget(pawn, ability);
 		if (target.IsValid)
 		{
-			Job job = ability.GetJob(target, target);
-			pawn.pather?.StopDead();
-			return job;
+			return ability.GetJob(target, target);;
 		}
 		
 		return null;
@@ -48,9 +42,7 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 
 	public override ThinkNode DeepCopy(bool resolve = true)
 	{
-		JobGiver_AIAbilityJump obj = (JobGiver_AIAbilityJump)base.DeepCopy(resolve);
-		obj.minDistToTarget = minDistToTarget;
-		obj.thresholdPercent = thresholdPercent;
+		JobGiver_AIDeploySpawnable obj = (JobGiver_AIDeploySpawnable)base.DeepCopy(resolve);
 		return obj;
 	}
 
@@ -59,18 +51,13 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 	protected override LocalTargetInfo GetTarget(Pawn caster, Ability ability)
 	{
 		potentialTargets.Clear();
-		bool isMeleeAttack = caster.CurrentEffectiveVerb.IsMeleeAttack;
-		float maxDist = minDistToTarget + ability.verb.EffectiveRange;
-		if(!isMeleeAttack)
-		{
-			maxDist = maxDist + Mathf.Clamp(caster.CurrentEffectiveVerb.EffectiveRange * 0.66f, 2f, 20f);
-		}
+		float maxDist = 15f + ability.verb.EffectiveRange;
 
 		Thing target = (Thing)AttackTargetFinder.BestAttackTarget(caster, TargetScanFlags.NeedLOSToAll | TargetScanFlags.NeedReachableIfCantHitFromMyPos | TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable, IsGoodTarget, 0f, maxDist, default(IntVec3), float.MaxValue, canBashDoors: true);
 
-
-		if (EnemiesUseApparelTooUtility.AiFindJumpCell(ability, target, thresholdPercent, minDistToTarget, out var destination))
+		if (boolTryFindTurretPosition(caster, target, out var destination, ability.verb))
 		{
+			Log.Warning("valid dest");
 			return new LocalTargetInfo(destination);
 		}
 
@@ -88,6 +75,25 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 		return false;
 	}
 	
+	private static bool boolTryFindTurretPosition(Pawn pawn, TargetInfo target, out IntVec3 dest, Verb verbToUse = null)
+	{
+		Verb verb = verbToUse ?? pawn.TryGetAttackVerb(null, !pawn.IsColonist);
+		if (verb == null)
+		{
+			dest = IntVec3.Invalid;
+			return false;
+		}
+		return CastPositionFinder.TryFindCastPosition(new CastPositionRequest
+		{
+			caster = pawn,
+			target = target.Thing,
+			verb = verb,
+			maxRangeFromTarget = 15f,
+			wantCoverFromTarget = (verb.EffectiveRange > 5f)
+		}, out dest);
+	}
+
+
 	
 }
 }

@@ -17,9 +17,9 @@
             <li>EUAT_LaunchFragGrenadeApparel</li>
         </value>
     </Operation>
-   <!-- <Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
-    </Operation>-->
+    </Operation>
     <!-- Add Spacer Military Tag to Grenadier Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/tags</xpath>
@@ -53,9 +53,9 @@
             <li>EUAT_LaunchIncendiaryPheonixArmor</li>
         </value>
     </Operation>
-    <!--<Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/verbs</xpath>
-    </Operation>-->
+    </Operation>
     <!-- Add Spacer Military Tag to Pheonix Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/tags</xpath>
@@ -166,9 +166,9 @@
             </value>
         </nomatch>
     </Operation> 
-    <!--<Operation Class="PatchOperationRemove">
+    <Operation Class="PatchOperationRemove">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
-    </Operation> -->
+    </Operation> 
     <!--<Operation Class="PatchOperationInsert">
         <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_FleePotentialExplosion"]</xpath>
         <value>

@@ -41,4 +41,53 @@
             </value>
         </nomatch>
     </Operation> 
+    <!-- Add Shard Shock Ability to Psychic Shock Lance -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
+        <value>
+            <li>EUAT_ShardShockLance</li>
+        </value>
+    </Operation>
+    <!-- Add Shard Insanity Ability to Psychic Insanity Lance -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
+        <value>
+            <li>EUAT_ShardInsanityLance</li>
+        </value>
+    </Operation>
+    
+    <!-- Add Laund Deadlife Capsule Ability to Deadlife Pack -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
+        <value>
+            <li>EUAT_LaunchDeadlifeCapsule</li>
+        </value>
+    </Operation><!---->
 </Patch>

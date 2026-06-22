@@ -18,8 +18,7 @@ namespace EnemiesUseApparelToo
         public override bool CanCast => RemainingCharges > 0;
 
         public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
-
-        public override bool ShouldHideGizmo => true;
+        //public override bool ShouldHideGizmo => true;
 
         public override bool GizmoDisabled(out string reason)
         {

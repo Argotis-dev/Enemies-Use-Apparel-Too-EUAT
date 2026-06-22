@@ -137,7 +137,7 @@
                 <alternateTagChoices>
                 <li>
                     <tag>EUAT_LocustVariant</tag>
-                    <chance>0.5</chance>
+                    <chance>0.33</chance>
                 </li>
                 </alternateTagChoices>
             </li>

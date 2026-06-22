@@ -65,6 +65,10 @@ public class JobGiver_AIAbilityJump : JobGiver_AICastAbility
 
 		Thing target = (Thing)AttackTargetFinder.BestAttackTarget(caster, TargetScanFlags.NeedLOSToAll | TargetScanFlags.NeedReachableIfCantHitFromMyPos | TargetScanFlags.NeedThreat | TargetScanFlags.NeedAutoTargetable, IsGoodTarget, 0f, maxDist, default(IntVec3), float.MaxValue, canBashDoors: true);
 
+		if(target is Pawn && target != null)
+		{
+			caster.mindState.enemyTarget = target;
+		}
 
 		if (EnemiesUseApparelTooUtility.AiFindJumpCell(ability, target, thresholdPercent, minDistToTarget, out var destination))
 		{

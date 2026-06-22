@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- Add Psychic Shock Ability to Psychic Shock Lance -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
+        <value>
+            <li>EUAT_PsychicShockLance</li>
+        </value>
+    </Operation>
+        <!-- Add Psychic Insanity Ability to Psychic Insanity Lance -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel</xpath>
+            <value>
+                <abilities /> 
+            </value>
+        </nomatch>
+    </Operation>  
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
+        <value>
+            <li>EUAT_PsychicInsanityLance</li>
+        </value>
+    </Operation>
+</Patch>

@@ -3,7 +3,7 @@
     <!-- Needs Royalty -->
     <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
     <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
-    <invert>true</invert>
+    <invertHarmony>true</invertHarmony>
         <operations>   
         <!-- Add Grenadelaunch Ability to Grenadier Armor -->
         <li Class="PatchOperationConditional">

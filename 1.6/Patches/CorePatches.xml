@@ -2,7 +2,7 @@
 <Patch>
     <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
     <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
-    <invert>true</invert>
+    <invertHarmony>true</invertHarmony>
         <operations>
         <!-- Add Psychic Shock Ability to Psychic Shock Lance -->
         <li Class="PatchOperationConditional">

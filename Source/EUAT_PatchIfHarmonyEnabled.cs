@@ -5,10 +5,11 @@ namespace EnemiesUseApparelToo
 {
     public class EUAT_PatchIfHarmonyEnabled : PatchOperationSequence
     {
-        public bool invert = false;
+        public bool invertHarmony = false;
+        public bool invertAbilities = false;
         protected override bool ApplyWorker(XmlDocument xml) {
             
-            if (EnemiesUseApparelTooModSettings.UseHarmonyPatch != invert)
+            if (EnemiesUseApparelTooModSettings.UseHarmonyPatch != invertHarmony || EnemiesUseApparelTooModSettings.KeepModAbilities != invertAbilities)
             {
                 return base.ApplyWorker(xml);
             }

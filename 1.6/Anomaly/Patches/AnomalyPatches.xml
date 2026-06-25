@@ -3,7 +3,7 @@
     <!-- Needs Anomaly -->
     <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
     <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
-    <invert>true</invert>
+    <invertHarmony>true</invertHarmony>
         <operations>
         <li Class="PatchOperationConditional">
             <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>

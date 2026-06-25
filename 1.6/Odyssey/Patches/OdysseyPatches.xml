@@ -3,7 +3,7 @@
     <!-- Needs Odyssey -->
     <!-- If the harmony patch is enabled then adding this ability is unnecessary-->
     <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
-    <invert>true</invert>
+    <invertHarmony>true</invertHarmony>
         <operations>
         <li Class="PatchOperationConditional">
             <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>

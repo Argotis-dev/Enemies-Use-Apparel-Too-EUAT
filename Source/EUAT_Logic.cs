@@ -18,7 +18,6 @@ namespace EnemiesUseApparelToo
     {
         static Start()
         {
-            Log.Message("Enemies Use Apparel Too loaded successfully!");
             if(EnemiesUseApparelTooModSettings.UseHarmonyPatch)
             {
                 new Harmony("EnemiesUseApparelToo").PatchAll(); 

@@ -1,18 +1,10 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
 
-using UnityEngine;
 using Verse;
 using Verse.AI;
-using Verse.AI.Group;
-using Verse.Sound;
-using Verse.Noise;
-using Verse.Grammar;
+
 using RimWorld;
-using RimWorld.Planet;
 
 // *Uncomment for Harmony*
  using System.Reflection;
@@ -27,37 +19,13 @@ namespace EnemiesUseApparelToo
         static Start()
         {
             Log.Message("Enemies Use Apparel Too loaded successfully!");
-            //if(EnemiesUseApparelTooModSettings.UseHarmonyPatch)
-            //{
+            if(EnemiesUseApparelTooModSettings.UseHarmonyPatch)
+            {
                 new Harmony("EnemiesUseApparelToo").PatchAll(); 
-            //}
+            }
 
         }
     }
-
-/*
-    // *Uncomment for Harmony*
-    [HarmonyPatch(typeof(Pawn), "TryGetAttackVerb")]
-    public static class PatchTryGetAttackVerb
-    {
-        public static bool Prefix(ref Verb __result, Pawn __instance, Thing target, bool allowManualCastWeapons, bool allowTurrets)
-        {
-            if (allowManualCastWeapons && __instance.apparel != null)
-            {
-                IEnumerable<Verb> list = __instance.apparel.AllApparelVerbs;
-                foreach(Verb verb in list)
-                {
-                    //Verb firstApparelVerb = __instance.apparel.FirstApparelVerb;
-                    if (verb != null && verb.Available() && verb.CanHitTarget(target))
-                    {
-                        __result = verb;
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-    }*/
 
     [HarmonyPatch(typeof(JobGiver_AIFightEnemy), "GetAbilityJob")]
     public static class PatchGetAbilityJob

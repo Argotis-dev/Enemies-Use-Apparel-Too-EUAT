@@ -4,7 +4,7 @@
         <li>/</li>
         <li>1.6</li>
         <!--DLC-->
-        <li IfModActive="Ludeon.Rimworld.Biotech">1.6/Royalty</li>
+        <li IfModActive="Ludeon.Rimworld.Royalty">1.6/Royalty</li>
         <li IfModActive="Ludeon.Rimworld.Anomaly">1.6/Anomaly</li>
         <li IfModActive="Ludeon.Rimworld.Odyssey">1.6/Odyssey</li>
     </v1.6>

@@ -375,13 +375,11 @@
           <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
         </verbProperties>
         <comps>
-        <!--shoot a blank grendae equivalant for visuals, then release deadlife gas at location-->
         <li Class="CompProperties_AbilityLaunchProjectile">
             <projectileDef>Grenade_Deadlife</projectileDef>
         </li>
         <li Class = "EnemiesUseApparelToo.CompProperties_AbilityEffectMarkDeadlifeGasAtDest">
-          <gasType>DeadlifeDust</gasType>
-          <cellsToFill>20</cellsToFill>
+          <cellsToFill>21</cellsToFill><!-- must match the number form the deadlife grenade-->
         </li>
         <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
         </li>

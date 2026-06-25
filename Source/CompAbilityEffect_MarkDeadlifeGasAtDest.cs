@@ -16,11 +16,8 @@ public class CompAbilityEffect_MarkDeadlifeGasAtDest : CompAbilityEffect_WithDur
 	public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
 	{
 		Pawn pawn = parent.pawn;
-		if (Props.gasType == GasType.DeadlifeDust)
-		{
-			GasUtility.MarkDeadlifeCorpsesForFaction(target.Cell, pawn.Map, pawn.Faction, TotalGas);
-			MarkDeadlifePawnsForFaction(target.Cell, pawn.Map, pawn.Faction, TotalGas);
-		}
+		GasUtility.MarkDeadlifeCorpsesForFaction(target.Cell, pawn.Map, pawn.Faction, TotalGas);
+		MarkDeadlifePawnsForFaction(target.Cell, pawn.Map, pawn.Faction, TotalGas);
 		base.Apply(target, dest);
 	}
 

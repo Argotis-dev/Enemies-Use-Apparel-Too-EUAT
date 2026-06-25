@@ -5,6 +5,7 @@
 <author>Argotis</author>
 <url>https://github.com/Argotis-dev/Enemies-Use-Apparel-Too-EUAT</url>
 <loadAfter>
+	<li>brrainz.harmony</li>
 	<li>ludeon.Rimworld.Royalty</li>
 	<li>ludeon.Rimworld.Odyssey</li>
 	<li>ludeon.Rimworld.Anomaly</li>
@@ -14,6 +15,15 @@
 <supportedVersions>
 	<li>1.6</li>
 </supportedVersions>
+
+<modDependencies>
+	<li>
+		<packageId>brrainz.harmony</packageId>
+		<displayName>Harmony</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+		<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+	</li>
+</modDependencies>
 
 <description>
 Enemies Use Apparel Too (EUAT)
@@ -55,7 +65,7 @@ This mod creates the core framework for the Enemy AI to use Vanilla Apparel. Thi
 5. Creating C# that reads the the jump range from the apparel so item quality can still affect jump range
 6. Adds think trees for Pawns to use this Mod's jump ability
 
-This mod won't modify other mod's item behavior on its own.
+With the harmony patch this mod can now check any apparel for usable violent verbs and attemp to use them
 
 
 PS: This mod would also allow for any apparel to have abilities that consume ammo. Want to create a Smokepop Cape? Or a hellfire helmet? With this mod that "should" only be xml edits you can reference within this mod, just look up ability defs in the code and modify them and attach them as seen in this mod's xmls.

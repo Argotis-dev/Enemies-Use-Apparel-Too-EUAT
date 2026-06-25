@@ -5,9 +5,10 @@
         <label>launch frag grenade</label>
         <description>Launch a grenade. Can be reloaded using steel.</description>
         <iconPath>UI/Commands/LaunchFragGrenade</iconPath>
-        <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
         <aiCanUse>true</aiCanUse>
-        <hotKey>Misc4</hotKey>
+        <showWhenDrafted>false</showWhenDrafted>
+        <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
         <verbProperties>
           <verbClass>Verb_CastAbility</verbClass>
           <range>12.9</range>
@@ -33,11 +34,11 @@
     <label>launch incendiary shell</label>
     <description>Launch a shell that creates an explosion on impact, igniting everything nearby. Can be reloaded using chemfuel.</description>
     <iconPath>UI/Commands/LaunchIncendiaryShell</iconPath>
-    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <ai_IsIncendiary>true</ai_IsIncendiary>
-    <!--<hotKey>Misc5</hotKey>-->
-    <groupAbility>true</groupAbility>
+    <showWhenDrafted>false</showWhenDrafted>
+    <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <range>14.9</range>
@@ -58,22 +59,16 @@
     </comps>
   </AbilityDef>
 
-
-  <AbilityGroupDef>
-    <defName>misc</defName>
-  </AbilityGroupDef>
-
   <AbilityDef Name="JetJump">
     <defName>EUAT_JetJump</defName>
     <label>jet jump</label>
     <description>Launch into the air with integrated jetpack. Can be reloaded using chemical fuel.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/JumpPack/JumpPack</iconPath>
-    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <!--<groupAbility>true</groupAbility>
-    <hotKey>Misc5</hotKey>
-    <groupDef>misc</groupDef>-->
+    <showWhenDrafted>false</showWhenDrafted>
+    <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
     <verbProperties>
         <verbClass>EnemiesUseApparelToo.Verb_CastAbilityJumpApparel</verbClass>
         <label>jump</label>
@@ -103,11 +98,11 @@
     <label>deploy turret</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Pawn/Humanlike/Apparel/TurretPack/TurretPack</iconPath>
-    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
-    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showWhenDrafted>false</showWhenDrafted>
+    <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
     <hotKey>Misc4</hotKey>
     <verbProperties>
         <verbClass>Verb_CastAbility</verbClass>
@@ -136,12 +131,11 @@
     <label>deploy hunter drone</label>
     <description>Deploy a turret at the target location. Consumed on use.</description>
     <iconPath>Things/Projectile/Projectile_HunterDrone</iconPath>
-    <!--<gizmoClass>EnemiesUseApparelToo.Command_AbilityApparel</gizmoClass>-->
     <aiCanUse>true</aiCanUse>
     <displayOrder>300</displayOrder>
-    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
-    <hotKey>Misc4</hotKey>
+    <showWhenDrafted>false</showWhenDrafted>
+    <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
     <verbProperties>
         <verbClass>Verb_CastAbility</verbClass>
         <range>20.9</range>
@@ -163,5 +157,233 @@
       </li>
     </comps>
   </AbilityDef>
+
+  <AbilityDef>
+    <defName>EUAT_PsychicShockLance</defName>
+    <label>psychic shock lance</label>
+    <description>A limited-use psychic effector. It shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage.\n\nThis shock lance was crafted from a broken shard of dark archotechnology. It has a shorter range than its non-shard based counterpart and it requires line of sight.</description>
+    <!--Placeholder Icon since the plan is just to display the verb-->
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <showWhenDrafted>false</showWhenDrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <aiCanUse>true</aiCanUse>
+    <statBases>
+      <Ability_Duration>125</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>41.9</range>
+      <warmupTime>2.2</warmupTime>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+      <soundCast>PsychicShockLanceCast</soundCast>
+      <soundAiming>PsychicArtifactWarmupSustained</soundAiming>
+    </verbProperties>
+    <comps>
+      <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicShock</hediffDef>
+        <psychic>True</psychic>
+        <onlyBrain>True</onlyBrain>
+        <goodwillImpact>-200</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityBrainDamageChance">
+        <brainDamageChance>0.3</brainDamageChance>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityConnectingFleckLine">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+   <AbilityDef>
+    <defName>EUAT_PsychicInsanityLance</defName>
+    <label>psychic insanity lance</label>
+    <description>A limited-use psychic effector. It shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage.\n\nThis shock lance was crafted from a broken shard of dark archotechnology. It has a shorter range than its non-shard based counterpart and it requires line of sight.</description>
+    <!--Placeholder Icon since the plan is just to display the verb-->
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <showWhenDrafted>false</showWhenDrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <aiCanUse>true</aiCanUse>
+    <statBases>
+      <Ability_Duration>666</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>41.9</range>
+      <warmupTime>2.2</warmupTime>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+      <soundAiming>PsychicArtifactWarmupSustained</soundAiming>
+    </verbProperties>
+    <comps>
+      <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
+      </li>
+      <li Class = "CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>Berserk</stateDef>
+        <stateDefForMechs>BerserkMechanoid</stateDefForMechs>
+        <psychic>True</psychic>
+        <canTargetBosses>false</canTargetBosses>
+        <goodwillImpact>-200</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityBrainDamageChance">
+        <brainDamageChance>0.3</brainDamageChance>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityConnectingFleckLine">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>EUAT_ShardShockLance</defName>
+    <label>psychic shock lance</label>
+    <description>A limited-use psychic effector. It shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage.\n\nThis shock lance was crafted from a broken shard of dark archotechnology. It has a shorter range than its non-shard based counterpart and it requires line of sight.</description>
+    <!--Placeholder Icon since the plan is just to display the verb-->
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <showWhenDrafted>false</showWhenDrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <aiCanUse>true</aiCanUse>
+    <statBases>
+      <Ability_Duration>125</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>16.9</range>
+      <warmupTime>2.4</warmupTime>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+      <soundCast>PsychicShockLanceCast</soundCast>
+      <soundAiming>PsychicArtifactWarmupSustained</soundAiming>
+    </verbProperties>
+    <comps>
+      <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>PsychicShock</hediffDef>
+        <psychic>True</psychic>
+        <onlyBrain>True</onlyBrain>
+        <goodwillImpact>-200</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityBrainDamageChance">
+        <brainDamageChance>0.3</brainDamageChance>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityConnectingFleckLine">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+   <AbilityDef>
+    <defName>EUAT_ShardInsanityLance</defName>
+    <label>psychic insanity lance</label>
+    <description>A limited-use psychic effector. It shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage.\n\nThis shock lance was crafted from a broken shard of dark archotechnology. It has a shorter range than its non-shard based counterpart and it requires line of sight.</description>
+    <!--Placeholder Icon since the plan is just to display the verb-->
+    <iconPath>UI/Abilities/Stun</iconPath>
+    <showWhenDrafted>false</showWhenDrafted>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <aiCanUse>true</aiCanUse>
+    <statBases>
+      <Ability_Duration>666</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>False</drawAimPie>
+      <range>16.9</range>
+      <warmupTime>2.4</warmupTime>
+      <targetParams>
+        <canTargetBuildings>false</canTargetBuildings>
+        <neverTargetIncapacitated>true</neverTargetIncapacitated>
+      </targetParams>
+      <soundCast>PsychicInsanityLanceCast</soundCast>
+      <soundAiming>PsychicArtifactWarmupSustained</soundAiming>
+    </verbProperties>
+    <comps>
+      <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
+      </li>
+      <li Class = "CompProperties_AbilityGiveMentalState">
+        <compClass>CompAbilityEffect_GiveMentalState</compClass>
+        <stateDef>Berserk</stateDef>
+        <stateDefForMechs>BerserkMechanoid</stateDefForMechs>
+        <psychic>True</psychic>
+        <canTargetBosses>false</canTargetBosses>
+        <goodwillImpact>-200</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityBrainDamageChance">
+        <brainDamageChance>0.3</brainDamageChance>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+      <li Class="CompProperties_AbilityConnectingFleckLine">
+        <fleckDef>PsycastPsychicLine</fleckDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+    <AbilityDef>
+        <defName>EUAT_LaunchDeadlifeCapsule</defName>
+        <label>launch deadlife capsule</label>
+        <description>Launch a Deadlife Capsule. Destroyed on use.</description>
+        <iconPath>UI/Abilities/ReleaseDeadlifeDust</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <showWhenDrafted>false</showWhenDrafted>
+        <!--<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+        <statBases>
+          <Ability_EffectRadius>23.9</Ability_EffectRadius>
+        </statBases>-->
+        <!--<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>-->
+        <statBases>
+          <Ability_Duration>20</Ability_Duration>
+        </statBases>
+        <verbProperties>
+          <verbClass>Verb_CastAbility</verbClass>
+          <range>23.9</range>
+          <warmupTime>1.5</warmupTime>
+          <forcedMissRadius>0.1</forcedMissRadius>
+          <soundCast>ThrowGrenade</soundCast>
+          <targetParams>
+              <canTargetPawns>false</canTargetPawns>
+              <canTargetCorpses>true</canTargetCorpses>
+              <canTargetBuildings>false</canTargetBuildings>
+              <canTargetLocations>true</canTargetLocations>
+          </targetParams>
+          <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        </verbProperties>
+        <comps>
+        <li Class="CompProperties_AbilityLaunchProjectile">
+            <projectileDef>Grenade_Deadlife</projectileDef>
+        </li>
+        <li Class = "EnemiesUseApparelToo.CompProperties_AbilityEffectMarkDeadlifeGasAtDest">
+          <cellsToFill>21</cellsToFill><!-- must match the number form the deadlife grenade-->
+        </li>
+        <li Class="EnemiesUseApparelToo.CompProperties_AbilityChargesApparel">
+        </li>
+        </comps>
+    </AbilityDef>
 
 </Defs>    

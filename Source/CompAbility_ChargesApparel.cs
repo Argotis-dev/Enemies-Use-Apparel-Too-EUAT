@@ -1,14 +1,6 @@
-﻿using HarmonyLib;
-using LudeonTK;
-using RimWorld;
-using RimWorld.Utility;
-using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using UnityEngine;
 using Verse;
-using Verse.AI;
 using EnemiesUseApparelToo.Utility;
 
 namespace EnemiesUseApparelToo
@@ -26,9 +18,8 @@ namespace EnemiesUseApparelToo
         public override bool CanCast => RemainingCharges > 0;
 
         public string LabelRemaining => $"{RemainingCharges} / {MaxCharges}";
+        //public override bool ShouldHideGizmo => true;
 
-        public override bool ShouldHideGizmo => true;
-/*
         public override bool GizmoDisabled(out string reason)
         {
            reason = null;
@@ -52,7 +43,7 @@ namespace EnemiesUseApparelToo
                 parent.RemainingCharges = RemainingCharges;
             }
             return base.CompGetGizmosExtra();
-        }*/
+        }/**/
         public override void PostApplied(List<LocalTargetInfo> targets, Map map)
         {
             ReloadableItem?.GetComp<CompApparelVerbOwner_Charged>()?.UsedOnce();

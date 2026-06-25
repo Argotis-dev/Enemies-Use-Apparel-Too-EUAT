@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- Needs Royalty -->
-    <!-- Add Grenadelaunch Ability to Grenadier Armor -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
+    <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invertHarmony>true</invertHarmony>
+        <operations>   
+        <!-- Add Grenadelaunch Ability to Grenadier Armor -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
             <value>
-                <abilities /> 
+                <li>EUAT_LaunchFragGrenadeApparel</li>
             </value>
-        </nomatch>
+        </li>
+        <!-- Add Launch Incendiary Ability to Pheonix Armor -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>    
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_LaunchIncendiaryPheonixArmor</li>
+            </value>
+        </li>
+        </operations>
     </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_LaunchFragGrenadeApparel</li>
-        </value>
-    </Operation>
-   <!-- <Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/verbs</xpath>
-    </Operation>-->
     <!-- Add Spacer Military Tag to Grenadier Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/tags</xpath>
@@ -34,28 +53,9 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/tags</xpath>
         <value>          
            <li>SpacerMilitary</li>
-           <li>OrbitalPowerArmor</li>
+           <li>EUAT_OrbitalPowerArmor</li>
         </value>
     </Operation>
-    <!-- Add Launch Incendiary Ability to Pheonix Armor -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel</xpath>
-            <value>
-                <abilities /> 
-            </value>
-        </nomatch>
-    </Operation>    
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_LaunchIncendiaryPheonixArmor</li>
-        </value>
-    </Operation>
-    <!--<Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/verbs</xpath>
-    </Operation>-->
     <!-- Add Spacer Military Tag to Pheonix Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/tags</xpath>
@@ -70,7 +70,7 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/tags</xpath>
         <value>
             <li>SpacerMilitary</li>
-            <li>CataphractVariant</li>
+            <li>EUAT_CataphractVariant</li>
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
@@ -79,9 +79,10 @@
             <li>
                 <bodyPartGroup>Torso</bodyPartGroup>
                 <apparelLayer>Middle</apparelLayer>
+                <color>(250, 250, 250)</color>
                 <alternateTagChoices>
                 <li>
-                    <tag>CataphractVariant</tag>
+                    <tag>EUAT_CataphractVariant</tag>
                     <chance>0.5</chance>
                 </li>
                 </alternateTagChoices>
@@ -104,10 +105,6 @@
             <li>EUAT_JetJump</li>
         </value>
     </Operation>
-   <!--<Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/verbs</xpath>
-    </Operation>
-     -->
     <!-- Add Spacer Military Tag to Locust Armor-->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/tags</xpath>
@@ -122,10 +119,36 @@
         <xpath>Defs/ThingDef[defName="Apparel_ArmorLocust"]/apparel/tags</xpath>
         <value>
             <li>SpacerMilitary</li>
-            <li>LocustVariant</li>
-            <li>OrbitalPowerArmor</li>
+            <li>EUAT_LocustVariant</li>
+            <li>EUAT_OrbitalPowerArmor</li>
         </value>
     </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/PawnKindDef[defName="Empire_Fighter_Champion"]/specificApparelRequirements</xpath>
+        <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="Empire_Fighter_Champion"]</xpath>
+            <value>
+                <specificApparelRequirements />
+            </value>
+        </nomatch>
+    </Operation>    
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/PawnKindDef[defName="Empire_Fighter_Champion"]/specificApparelRequirements</xpath>
+        <value>
+            <li>
+                <bodyPartGroup>Torso</bodyPartGroup>
+                <apparelLayer>Middle</apparelLayer>
+                <color>(250, 250, 250)</color>
+                <alternateTagChoices>
+                <li>
+                    <tag>EUAT_LocustVariant</tag>
+                    <chance>0.50</chance>
+                </li>
+                </alternateTagChoices>
+            </li>
+        </value>
+    </Operation>
+    <!-- Add Jet Jump Ability to Jump Packs-->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/apparel/abilities</xpath>
         <nomatch Class="PatchOperationAdd">
@@ -166,9 +189,6 @@
             </value>
         </nomatch>
     </Operation> 
-    <!--<Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_PackJump"]/verbs</xpath>
-    </Operation> -->
     <!--<Operation Class="PatchOperationInsert">
         <xpath>Defs/ThinkTreeDef[defName = "HumanlikeConstant"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalCanDoConstantThinkTreeJobNow"]/subNodes/li[@Class="JobGiver_FleePotentialExplosion"]</xpath>
         <value>

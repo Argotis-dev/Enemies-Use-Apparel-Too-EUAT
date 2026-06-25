@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invertHarmony>true</invertHarmony>
+        <operations>
+        <!-- Add Psychic Shock Ability to Psychic Shock Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_PsychicShockLance</li>
+            </value>
+        </li>
+            <!-- Add Psychic Insanity Ability to Psychic Insanity Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_PsychicInsanityLance</li>
+            </value>
+        </li>
+        </operations>
+    </Operation>  
+</Patch>

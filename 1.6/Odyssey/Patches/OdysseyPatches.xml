@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- Needs Odyssey -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel</xpath>
+    <!-- If the harmony patch is enabled then adding this ability is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invertHarmony>true</invertHarmony>
+        <operations>
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>    
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
             <value>
-                <abilities /> 
+                <li>EUAT_DeployHunterDrone</li>
             </value>
-        </nomatch>
-    </Operation>    
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_DeployHunterDrone</li>
-        </value>
-    </Operation>
-    <!--<Operation Class="PatchOperationRemove">
-        <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/verbs</xpath>
-    </Operation>-->
-    <!-- Add Defense Pop Tag to Hunter Drone Pack-->
+        </li>
+        </operations>
+    </Operation>  
+    <!--Add Defense Pop Tag to Hunter Drone Pack-->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_PackHunter"]/apparel/tags</xpath>
         <nomatch Class="PatchOperationAdd">
@@ -60,9 +63,10 @@
             <li>
                 <bodyPartGroup>Torso</bodyPartGroup>
                 <apparelLayer>Middle</apparelLayer>
+                <color>(250, 250, 250)</color>
                 <alternateTagChoices>
                 <li>
-                    <tag>OrbitalPowerArmor</tag>
+                    <tag>EUAT_OrbitalPowerArmor</tag>
                     <chance>0.50</chance>
                 </li>
                 </alternateTagChoices>
@@ -85,9 +89,10 @@
             <li>
                 <bodyPartGroup>Torso</bodyPartGroup>
                 <apparelLayer>Middle</apparelLayer>
+                <color>(250, 250, 250)</color>
                 <alternateTagChoices>
                 <li>
-                    <tag>LocustVariant</tag>
+                    <tag>EUAT_LocustVariant</tag>
                     <chance>0.10</chance>
                 </li>
                 </alternateTagChoices>

@@ -35,7 +35,5 @@ faction editing mods
 
 Add better logic to turret and hunter drone targeting. They AI currently uses them as grenade like abilities, which is "fine" but I'm contemplating ways to make their use feel more strategic.
 
-Explore if resource optimization is required. The Jump logic check sits in the humanlike constant think tree and I don't know how much that affects perormance
-
 ## Additional Notes
 This Mod is based off of the the template found here: https://github.com/Rimworld-Mods/Template. I would have struggled way longer to get started without them so big thanks to the creators!!!

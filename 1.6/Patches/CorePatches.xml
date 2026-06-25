@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-    <!-- Add Psychic Shock Ability to Psychic Shock Lance -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel</xpath>
+    <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invert>true</invert>
+        <operations>
+        <!-- Add Psychic Shock Ability to Psychic Shock Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
             <value>
-                <abilities /> 
+                <li>EUAT_PsychicShockLance</li>
             </value>
-        </nomatch>
-    </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicShockLance"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_PsychicShockLance</li>
-        </value>
-    </Operation>
-        <!-- Add Psychic Insanity Ability to Psychic Insanity Lance -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel</xpath>
+        </li>
+            <!-- Add Psychic Insanity Ability to Psychic Insanity Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
             <value>
-                <abilities /> 
+                <li>EUAT_PsychicInsanityLance</li>
             </value>
-        </nomatch>
+        </li>
+        </operations>
     </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PsychicInsanityLance"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_PsychicInsanityLance</li>
-        </value>
-    </Operation>
 </Patch>

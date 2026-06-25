@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- Needs Anomaly -->
+    <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invert>true</invert>
+        <operations>
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>    
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_DeployTurret</li>
+            </value>
+        </li>
+        <!-- Add Shard Shock Ability to Psychic Shock Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_ShardShockLance</li>
+            </value>
+        </li>
+        <!-- Add Shard Insanity Ability to Psychic Insanity Lance -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_ShardInsanityLance</li>
+            </value>
+        </li>
+        </operations>
+    </Operation>
+    <!-- Add Launch Deadlife Capsule Ability to Deadlife Pack aka, the harmony patch won't make this work on it's own-->
     <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
         <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel</xpath>
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel</xpath>
             <value>
                 <abilities /> 
             </value>
         </nomatch>
-    </Operation>    
+    </Operation>  
     <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_PackTurret"]/apparel/abilities</xpath>
+        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
         <value>
-            <li>EUAT_DeployTurret</li>
+            <li>EUAT_LaunchDeadlifeCapsule</li>
         </value>
     </Operation>
     <!-- Add Defense Pop Tag to Turret Pack-->
@@ -41,53 +95,5 @@
             </value>
         </nomatch>
     </Operation> 
-    <!-- Add Shard Shock Ability to Psychic Shock Lance -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel</xpath>
-            <value>
-                <abilities /> 
-            </value>
-        </nomatch>
-    </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicShockLance"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_ShardShockLance</li>
-        </value>
-    </Operation>
-    <!-- Add Shard Insanity Ability to Psychic Insanity Lance -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel</xpath>
-            <value>
-                <abilities /> 
-            </value>
-        </nomatch>
-    </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ShardPsychicInsanityLance"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_ShardInsanityLance</li>
-        </value>
-    </Operation>
-    
-    <!-- Add Laund Deadlife Capsule Ability to Deadlife Pack -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel</xpath>
-            <value>
-                <abilities /> 
-            </value>
-        </nomatch>
-    </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_DeadlifePack"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_LaunchDeadlifeCapsule</li>
-        </value>
-    </Operation><!---->
+
 </Patch>

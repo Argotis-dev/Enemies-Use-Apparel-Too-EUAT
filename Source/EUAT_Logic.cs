@@ -26,10 +26,12 @@ namespace EnemiesUseApparelToo
     {
         static Start()
         {
-            Log.Message("Mod template loaded successfully!");
+            Log.Message("Enemies Use Apparel Too loaded successfully!");
+            //if(EnemiesUseApparelTooModSettings.UseHarmonyPatch)
+            //{
+                new Harmony("EnemiesUseApparelToo").PatchAll(); 
+            //}
 
-            // *Uncomment for Harmony*
-            new Harmony("EnemiesUseApparelToo").PatchAll();
         }
     }
 
@@ -57,7 +59,6 @@ namespace EnemiesUseApparelToo
         }
     }*/
 
-        // *Uncomment for Harmony*
     [HarmonyPatch(typeof(JobGiver_AIFightEnemy), "GetAbilityJob")]
     public static class PatchGetAbilityJob
     {
@@ -85,7 +86,7 @@ namespace EnemiesUseApparelToo
                         
                     }
                 }
-                
+
             }
             return true;
         }

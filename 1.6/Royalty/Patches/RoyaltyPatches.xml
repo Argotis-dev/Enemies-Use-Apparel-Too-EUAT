@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
     <!-- Needs Royalty -->
-    <!-- Add Grenadelaunch Ability to Grenadier Armor -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
+    <!-- If the harmony patch is enabled then adding these abilities is unnecessary-->
+    <Operation Class="EnemiesUseApparelToo.EUAT_PatchIfHarmonyEnabled">
+    <invert>true</invert>
+        <operations>   
+        <!-- Add Grenadelaunch Ability to Grenadier Armor -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>  
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
             <value>
-                <abilities /> 
+                <li>EUAT_LaunchFragGrenadeApparel</li>
             </value>
-        </nomatch>
+        </li>
+        <!-- Add Launch Incendiary Ability to Pheonix Armor -->
+        <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
+            <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel</xpath>
+                <value>
+                    <abilities /> 
+                </value>
+            </nomatch>
+        </li>    
+        <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
+            <value>
+                <li>EUAT_LaunchIncendiaryPheonixArmor</li>
+            </value>
+        </li>
+        </operations>
     </Operation>  
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_LaunchFragGrenadeApparel</li>
-        </value>
-    </Operation>
     <!-- Add Spacer Military Tag to Grenadier Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorMarineGrenadier"]/apparel/tags</xpath>
@@ -34,23 +56,6 @@
            <li>EUAT_OrbitalPowerArmor</li>
         </value>
     </Operation>
-    <!-- Add Launch Incendiary Ability to Pheonix Armor -->
-    <Operation Class="PatchOperationConditional">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
-        <nomatch Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel</xpath>
-            <value>
-                <abilities /> 
-            </value>
-        </nomatch>
-    </Operation>    
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/abilities</xpath>
-        <value>
-            <li>EUAT_LaunchIncendiaryPheonixArmor</li>
-        </value>
-    </Operation>
-
     <!-- Add Spacer Military Tag to Pheonix Armor -->
     <Operation Class="PatchOperationConditional">
         <xpath>Defs/ThingDef[defName="Apparel_ArmorCataphractPhoenix"]/apparel/tags</xpath>
@@ -137,7 +142,7 @@
                 <alternateTagChoices>
                 <li>
                     <tag>EUAT_LocustVariant</tag>
-                    <chance>0.33</chance>
+                    <chance>0.50</chance>
                 </li>
                 </alternateTagChoices>
             </li>

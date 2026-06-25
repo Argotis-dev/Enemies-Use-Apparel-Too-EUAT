@@ -31,7 +31,11 @@ Enemies Use Apparel Too (EUAT)
 Ever want to have enemy melee pawns fly at you? No???? well this mod lets them do that.
 Ever want Cataphracts to be able to fill your base with fire? No???? well now they can!
 
-This mod converts listed Apparel Verbs into abilities that enemy AI can use.
+This mod converts listed Apparel Verbs into abilities that enemy AI can use. 
+
+With the harmony Patch, all violent apparel verbs are considered for use. 
+
+There are settings to toggle the ability/harmony functionality
 
 Items affected:
 Grenadier Armor
@@ -40,6 +44,11 @@ Locust Armor
 Jump Packs
 Hunter Drone Packs
 Turret Packs
+Psychic/shard Shock Lance*
+Psychic/shard Insanity Lance*
+Deadlife Packs*
+
+* haven't been added to enemy item generation
 
 This mod adds the defense pop tag to the listed packs, meaning any enemies that could spawn with those(smokepop belt, loweshield pack, etc...) can spawn with the turret, jump, and hunter pack now.
 
@@ -47,9 +56,9 @@ The mod also adds the listed armors to spawn pools to allow them to spawn on ene
 
 Note on jump logic:
 
-Jump logic currently works in two ways:
+Jump logic currently works in three ways:
 
-1: if a non player humanlike is healthy and melee and more than 8 tiles away from it's target it will jump to itss target
+1: if a non player humanlike is healthy and melee and more than 8 tiles away from it's target it will jump to its target
 
 2: if a non player humanlike is unhealthy and threatened it will try to escape
 
@@ -60,15 +69,12 @@ How this mod works:
 This mod creates the core framework for the Enemy AI to use Vanilla Apparel. This is done by:
 1. Converting relevant Apparel verbs into abilities (similar to the grenade launch of odyssey's unique weapons)
 2. Creating C# that allows those abilities to consume charges from the apparel they're on
-3. Creating C# that allows charges to be displayed on ability gizmos from apparel
-4. Creating C# that allows the ai to use abilities to jump to the pawn's target enemy
-5. Creating C# that reads the the jump range from the apparel so item quality can still affect jump range
-6. Adds think trees for Pawns to use this Mod's jump ability
+3. Creating C# that reads the the jump range from the apparel so item quality can still affect jump range
+4. Adds think trees for Pawns to use this mod's jump ability
 
-With the harmony patch this mod can now check any apparel for usable violent verbs and attemp to use them
+This mod won't modify other mod's item behavior on its own.
 
 
-PS: This mod would also allow for any apparel to have abilities that consume ammo. Want to create a Smokepop Cape? Or a hellfire helmet? With this mod that "should" only be xml edits you can reference within this mod, just look up ability defs in the code and modify them and attach them as seen in this mod's xmls.
-
+PS: This mod would also allow for any apparel to have abilities(aka enemy usable) that consume ammo. Want to create a Smokepop Cape for enemies? Or a hellfire helmet for enemies? With this mod that "should" only be xml edits you can reference within this mod, just look up ability defs in the code and modify them and attach them as seen in this mod's xmls.
 </description>
 </ModMetaData>
